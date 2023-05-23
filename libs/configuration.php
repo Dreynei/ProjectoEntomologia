@@ -7,7 +7,7 @@
     $config->set('viewFolder', 'view/');
     
     $config->set('dbhost', 'localhost');
-    $config->set('dbname', 'db_entomologia');
+    $config->set('dbname', 'lenguajes');
     $config->set('dbuser', 'root');
     $config->set('dbpass', '');
     

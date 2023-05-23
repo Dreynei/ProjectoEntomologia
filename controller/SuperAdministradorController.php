@@ -18,7 +18,7 @@ class SuperAdministradorController {
     
     public function mostrar() {
         //view super admin
-        $this->view->show("mostrarregistraradministradoresView.php", NULL);
+        $this->view->show("superloginView.php", NULL);
     }
 
     public function registrarAdministrador() {
