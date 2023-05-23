@@ -3,3 +3,9 @@ body {
     background-image: url("../img/backgroundImg.jpg");
     background-repeat: repeat;
 }
+div#divImgLogin{
+    background-image: url("../img/mataLogin.png");
+    background-repeat: no-repeat;
+    background-color: #000;
+    opacity: 0.5;
+}

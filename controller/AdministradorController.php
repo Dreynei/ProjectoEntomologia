@@ -16,6 +16,7 @@ class AdministradorController {
         $this->view=new View();
     }//constructor
     
+    
     public function mostrar() {
         
         //Aqui va la view de admin view
