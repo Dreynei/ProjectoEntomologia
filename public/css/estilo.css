@@ -1,0 +1,51 @@
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+article, footer, header, nav, section{
+    display: block;
+}
+
+body{
+    background: #27D9D4;
+    color: #FFF;
+    font-size: 1em;
+}
+
+a{
+    color: #336664;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #D17121;
+}
+
+form{
+    width: 100%;
+}
+
+form div{
+    margin: 0.5em;
+}
+
+input[type="email"], input[type="text"]{
+    background: #A0F8F6; 
+    border-radius: 2em;
+    color: #000;
+    font-size: 1em;
+    padding: 0.25em;
+    width: 95%;
+}
+
+header,section#principal{
+    background: #17B8B4;
+}
+
+
+p#m1{
+    font-size: 3em;
+}
