@@ -6,11 +6,11 @@
  */
 
 /**
- * Description of AdministradorController
+ * Description of UsuarioController
  *
  * @author Miguel
  */
-class AdministradorController {
+class UsuarioController {
    
     public function __construct() {
         $this->view=new View();
@@ -20,16 +20,35 @@ class AdministradorController {
     public function mostrar() {
         
         //Aqui va la view de admin view
-        $this->view->show("mostrarregistrarusuariosView.php", NULL);
+        //$this->view->show("mostrarregistrarusuariosView.php", NULL);
     }
 
+    public function autenticarUsuario(){
+        
+        require 'model/UsuarioModel.php';
+
+        $usuarioModel = new UsuarioModel();
+
+        $resultado = $usuarioModel->autenticarUsuario(
+                $_POST['usuario']
+                , $_POST['contrasenna']
+        );
+      
+        if ($resultado) {
+
+            $this->view->show("buscarespecimenView.php", NULL);
+        } else {
+            $this->view->show("indexView.php", NULL);
+        }
+    }
+    
     public function registrarUsuario() {
         
-        require 'model/AdministradorModel.php';
+        require 'model/UsuarioModel.php';
         
-        $administradorModel = new AdministradorModel();
+        $usuarioModel = new UsuarioModel();
         
-        $administradorModel->registrarUsuario(
+        $usuarioModel->registrarUsuario(
                 $_POST['usuario']
                 ,$_POST['contrasenna']
                 ,$_POST['tipo']
