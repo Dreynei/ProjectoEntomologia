@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/public/css/estilo.css</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/IndexController.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/SecretController.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/AdministradorController.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/indexView.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/superloginView.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

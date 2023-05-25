@@ -39,20 +39,21 @@ class SuperAdministradorModel {
     
     public function autenticarAdministrador($usuario, $contrasenna){
         
-        $consulta = $this->db->prepare("call sp_autenticar_administrador('".$usuario."', '".$contrasenna."')");
+       $consulta = $this->db->prepare("call sp_obtener_contrasenna_administrador('".$usuario."')");
         
-        
-        if($consulta->execute()){
-            
-            $resultado = "Se autentico correctamente";
-            
-        }else{
-            
-            $resultado = "No se logro autenticar";
-            
-        }
-        
-        return $resultado;
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchColumn();
+       
+       if(password_verify($contrasenna, $resultado)){
+           
+           return true;
+           
+       }else{
+           
+           return $contrasenna === $resultado;
+           
+       }
         
     }
     

@@ -6,17 +6,17 @@
  */
 
 /**
- * Description of AdministradorModel
+ * Description of UsuarioModel
  *
  * @author Miguel
  */
-class AdministradorModel {
+class UsuarioModel {
     
     private $db;
 
     public function __construct() {
         require 'libs/SPDO.php';
-        $this->db= SPDO::getInstance();
+        $this->db = SPDO::getInstance();
     } // constructor
      
     
@@ -31,9 +31,32 @@ class AdministradorModel {
     }
     
     public function autenticarUsuario($usuario, $contrasenna){
-                
+        //solucion mas simple     
+//       $consulta = $this->db->prepare("call sp_autenticar_usuario('".$usuario."', '".$contrasenna."')");
+//        
+//       $consulta->execute();
+//       
+//       $resultado = $consulta->fetchColumn();
+//       
+//       return $resultado;
        
-
+        
+       $consulta = $this->db->prepare("call sp_obtener_contrasenna_usuario('".$usuario."')");
+        
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchColumn();
+       
+       if(password_verify($contrasenna, $resultado)){
+           
+           return true;
+           
+       }else{
+           
+           return $contrasenna === $resultado;
+           
+       }
+      
     }
     
 }
