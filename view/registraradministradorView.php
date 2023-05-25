@@ -1,39 +1,35 @@
 <?php
+include_once './public/header.php';
+?>
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
+<div id="contenedoRregistarAdmins" class="container d-flex align-items-center justify-content-center ">         
+            <form id="" class="bg-dark">
 
-/**
- * Description of mostrarregistraradministradoresView
- *
- * @author Miguel
- */
-class mostrarregistraradministradoresView {
-    
-//    <main class="form-signin w-100 m-auto">
-//  <form>
-//    <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-//    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-//
-//    <div class="form-floating">
-//      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-//      <label for="floatingInput">Email address</label>
-//    </div>
-//    <div class="form-floating">
-//      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-//      <label for="floatingPassword">Password</label>
-//    </div>
-//
-//    <div class="checkbox mb-3">
-//      <label>
-//        <input type="checkbox" value="remember-me"> Remember me
-//      </label>
-//    </div>
-//    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-//    <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
-//  </form>
-//</main>
-    
-}
+                <h1 class="m-3 h3 fw-normal text-light">Registro usuario administrador</h1>
+
+                <div class="m-3 form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="text">
+                    <label for="floatingInput">Nombre de usuario</label>
+                </div>
+                <div class="m-3 form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="password">
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+                <div class="m-3 form-floating">
+                    <input type="password" class="form-control" id="floatingPassword2" placeholder="password">
+                    <label for="floatingPassword2">Confirmar contraseña</label>
+                </div>
+                <button class="m-3 btn btn-lg btn-primary" type="submit">Registrar</button>
+               
+
+
+            </form >
+        </div>
+
+
+
+
+
+<?php
+include_once './public/footer.php';
+?>

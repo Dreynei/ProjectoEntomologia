@@ -1,8 +1,14 @@
 
 body {
-    background-image: url("../img/backgroundImg.jpg");
-    background-repeat: repeat;
+    background-image: url("../img/background_1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
 }
 div#divImgLogin{
     background-color: #fff;
 }
+
+div#contenedoRregistarAdmins{
+    height: 60vh;
+}
+

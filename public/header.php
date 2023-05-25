@@ -5,7 +5,7 @@
 		<title>Ejemplo HTML</title>
 		<meta name="description" content="Este es un ejemplo de pagina web">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-                <!--<link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>-->
+                <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
                 <link href="public/css/bootstrap.min.css" rel="stylesheet">
                 <script src="public/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="public/js/jquery.js"></script>
