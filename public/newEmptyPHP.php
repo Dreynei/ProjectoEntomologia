@@ -1,7 +1,15 @@
 <!doctype html>
 <html>
     <head>
-        <title>title</title>
+        <meta charset="utf-8">
+        <title>Laboratorio Entomologia</title>
+        <meta name="description" content="Este es un ejemplo de pagina web">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="public/css/bootstrap.min.css" rel="stylesheet">
+        <script src="public/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="public/js/jquery.js"></script>
+
     </head>
     <body class="d-flex flex-column h-100">
 
@@ -34,20 +42,17 @@
             </nav>
         </header>
 
-        
+        <main class="flex-shrink-0">
+            <div class="container">
+                hkfghfglkhflgh
+            </div>
+        </main> 
 
         <footer class="footer mt-auto py-3 bg-light">
             <div class="container">
                 <span class="text-muted">Place sticky footer content here.</span>
             </div>
         </footer>
-
-
-        <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
-
-
     </body>
 </html>
 
