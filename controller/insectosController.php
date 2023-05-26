@@ -15,8 +15,20 @@ class insectosController {
         $this->view=new View();
     } // constructor
     
-    public function mostrar() {
+    public function mostrarRegistrarGenero() {
         
         $this->view->show("registrargeneroView.php", NULL);
     } // mostrar
+    
+    public function mostrarRegistrarInsecto() {
+        
+        $this->view->show("registrarinsectoView.php", NULL);
+    }
+    
+    public function mostrar() {
+        
+        $this->view->show("buscarespecimenView.php", NULL);
+    } // mostrar
+    
+    
 }

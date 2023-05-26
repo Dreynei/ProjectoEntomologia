@@ -22,7 +22,7 @@ login de usuarios normales
 
         <div id="contenedorLogin" class="container d-flex align-items-center justify-content-center" style="height: 100vh;"> 
             <div id="divImgLogin" class="w-50">
-                <form method="POST" class="" action="?controlador=Usuario&accion=autenticarUsuario">
+                <form class="" action="?controlador=insectos&accion=mostrar">
 
                     <h1 class="m-3 h3 fw-normal">Autenticación</h1>
 
