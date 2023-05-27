@@ -18,10 +18,9 @@ class IndexController {
     
     public function mostrar() {
         
-        $this->view->show("indexView.php", NULL);
+        //$this->view->show("indexView.p", NULL);
+        $this->view->show("usuariologinView.php", NULL);
     } // mostrar
-    
-    
     
     
 }

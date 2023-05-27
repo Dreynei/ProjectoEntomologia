@@ -47,16 +47,20 @@ class UsuarioModel {
        
        $resultado = $consulta->fetchColumn();
        
-       if(password_verify($contrasenna, $resultado)){
-           
-           return true;
-           
-       }else{
-           
-           return $contrasenna === $resultado;
-           
-       }
-      
+       return password_verify($contrasenna, $resultado);
+               
+    }
+    
+    public function obtenerTiposUsuario(){
+        
+       $consulta = $this->db->prepare("call sp_listar_tipos_usuario()");
+        
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchAll();
+        
+       return $resultado;
+       
     }
     
 }

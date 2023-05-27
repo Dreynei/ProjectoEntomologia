@@ -19,8 +19,7 @@ class UsuarioController {
     
     public function mostrar() {
         
-        //Aqui va la view de admin view
-        //$this->view->show("mostrarregistrarusuariosView.php", NULL);
+        $this->view->show("usuariologinView.php", NULL);
     }
 
     public function autenticarUsuario(){
@@ -34,11 +33,14 @@ class UsuarioController {
                 , $_POST['contrasenna']
         );
       
+        
+        $lista["lista"] = $usuarioModel->obtenerTiposUsuario();
+        
         if ($resultado) {
 
-            $this->view->show("buscarespecimenView.php", NULL);
+            $this->view->show("registrarusuarioView.php", $lista);
         } else {
-            $this->view->show("indexView.php", NULL);
+            $this->view->show("usuariologinView.php", NULL);
         }
     }
     
@@ -48,14 +50,28 @@ class UsuarioController {
         
         $usuarioModel = new UsuarioModel();
         
-        $usuarioModel->registrarUsuario(
+        $resultado = $usuarioModel->registrarUsuario(
                 $_POST['usuario']
                 ,$_POST['contrasenna']
                 ,$_POST['tipo']
                 );
         
+        
+        if($resultado){
+            
+            $lista['mensaje'] = array('Registrado correctamente');
+            
+        }else{
+            
+            $lista['mensaje'] = array('Error en el registro, usuario duplicado o valores invalidos');
+            
+        }
+        
+        
+        $lista["lista"] = $usuarioModel->obtenerTiposUsuario();
+
         //aqui la view
-        $this->view->show("registrarausuarioView.php", NULL);
+        $this->view->show("registrarusuarioView.php", $lista);
     }
     
 }
