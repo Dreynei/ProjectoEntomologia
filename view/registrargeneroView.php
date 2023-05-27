@@ -1,3 +1,8 @@
 <?php
-include_once './public/newEmptyPHP.php';
+include_once './public/header.php';
+?>
+
+
+<?php
+include_once './public/footer.php';
 ?>
