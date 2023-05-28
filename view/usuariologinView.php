@@ -16,13 +16,7 @@
             <form class="bg-body" method="POST" action="?controlador=Usuario&accion=autenticarUsuario">
 
                 <h1 class="m-3 h3 fw-normal">Autenticación usuario</h1>
-                <?php
-                echo "<script>console.log('Console: " .$validar. "' );</script>";
-                if (isset($validar)) {
-                    
-                    ?><span class="">text</span> <?php
-                }
-                ?>
+                
                 <div class="m-3 form-floating">
                     <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="Usuario" required>
                     <label for="floatingInput">Nombre de usuario</label>

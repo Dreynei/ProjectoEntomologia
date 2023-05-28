@@ -46,14 +46,13 @@ class UsuarioModel {
        $consulta->execute();
        
        $resultado = $consulta->fetchColumn();
-       echo "<script>console.log('Console: " .$resultado. "' );</script>";
        return password_verify($contrasenna, $resultado);
                
     }
     
-    public function obtenerTiposUsuario(){
+    public function obtenerTiposUsuario($usuario){
         
-       $consulta = $this->db->prepare("call sp_listar_tipos_usuario()");
+       $consulta = $this->db->prepare("call sp_listar_tipos_usuario('".$usuario."')");
         
        $consulta->execute();
        

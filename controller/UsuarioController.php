@@ -23,7 +23,6 @@ class UsuarioController {
     }
 
     public function autenticarUsuario(){
-        $validar="usuario o contraseña incorrectos";
         require 'model/UsuarioModel.php';
 
         $usuarioModel = new UsuarioModel();
@@ -35,15 +34,18 @@ class UsuarioController {
         );
       
         
-        $lista["lista"] = $usuarioModel->obtenerTiposUsuario();
- 
         if ($resultado) {
-            $_SESSION['user']=$_POST['usuario'];
-            $this->view->show("registrarusuarioView.php", $validar);
+            session_start();
+            $lista=$usuarioModel->obtenerTiposUsuario( $_POST['usuario']);
+            foreach ($lista as $tipo){
+                $_SESSION['user']=$tipo[0];
+            }
+ 
+            $this->view->show("registrarusuarioView.php", null);
             
         } else {
             
-            $this->view->show("usuariologinView.php", $validar);
+            $this->view->show("usuariologinView.php", null);
         }
     }
     
