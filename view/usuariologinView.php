@@ -11,16 +11,16 @@
     <body class="text-center">
 
         <div id="contenedorLogin" class="container d-flex align-items-center justify-content-center" style="height: 100vh;">         
-            <form class="">
+            <form method="POST" action="?controlador=Usuario&accion=autenticarUsuario">
 
-                <h1 class="m-3 h3 fw-normal">Autenticación administrador</h1>
+                <h1 class="m-3 h3 fw-normal">Autenticación usuario</h1>
 
                 <div class="m-3 form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Super administrador">
+                    <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="Usuario">
                     <label for="floatingInput">Nombre de usuario</label>
                 </div>
                 <div class="m-3 form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="password">
+                    <input type="password" name="contrasenna" class="form-control" id="floatingPassword" placeholder="password">
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <button class="m-3 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>

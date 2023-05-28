@@ -45,16 +45,8 @@ class SuperAdministradorModel {
        
        $resultado = $consulta->fetchColumn();
        
-       if(password_verify($contrasenna, $resultado)){
-           
-           return true;
-           
-       }else{
-           
-           return $contrasenna === $resultado;
-           
-       }
-        
+       return password_verify($contrasenna, $resultado);
+            
     }
     
 }

@@ -24,7 +24,7 @@ class SuperAdministradorController {
     public function registrarMostrar() {
         $this->view->show("registraradministradorView.php", NULL);
     }
-
+    
     public function registrarAdministrador() {
         
         require 'model/SuperAdministradorModel.php';
@@ -52,7 +52,7 @@ class SuperAdministradorController {
                 );
         
         //aqui la view
-        $this->view->show("registrarausuarioView.php", NULL);
+        $this->view->show("registrarusuarioView.php", NULL);
     }
 
     public function autenticarAdministrador(){
