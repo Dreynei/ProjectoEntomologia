@@ -18,16 +18,17 @@ class UsuarioController {
     
     
     public function mostrar() {
-        
-        $this->view->show("usuariologinView.php", NULL);
+        $validar="usuario o contraseña incorrectos";
+        $this->view->show("usuariologinView.php", $validar);
     }
 
     public function autenticarUsuario(){
-        
+        $validar="usuario o contraseña incorrectos";
         require 'model/UsuarioModel.php';
 
         $usuarioModel = new UsuarioModel();
-
+        
+        
         $resultado = $usuarioModel->autenticarUsuario(
                 $_POST['usuario']
                 , $_POST['contrasenna']
@@ -35,12 +36,14 @@ class UsuarioController {
       
         
         $lista["lista"] = $usuarioModel->obtenerTiposUsuario();
-        
+ 
         if ($resultado) {
-
-            $this->view->show("registrarusuarioView.php", $lista);
+            $_SESSION['user']=$_POST['usuario'];
+            $this->view->show("registrarusuarioView.php", $validar);
+            
         } else {
-            $this->view->show("usuariologinView.php", NULL);
+            
+            $this->view->show("usuariologinView.php", $validar);
         }
     }
     

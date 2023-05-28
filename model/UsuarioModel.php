@@ -46,7 +46,7 @@ class UsuarioModel {
        $consulta->execute();
        
        $resultado = $consulta->fetchColumn();
-       
+       echo "<script>console.log('Console: " .$resultado. "' );</script>";
        return password_verify($contrasenna, $resultado);
                
     }

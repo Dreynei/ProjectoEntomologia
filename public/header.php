@@ -2,8 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Ejemplo HTML</title>
-        <meta name="description" content="Este es un ejemplo de pagina web">
+        <title>Laboratorio Entomologia</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/bootstrap.min.css" rel="stylesheet">
