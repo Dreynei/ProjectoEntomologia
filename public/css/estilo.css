@@ -3,6 +3,7 @@ body {
     background-image: url("../img/background_1.jpg");
     background-repeat: no-repeat;
     background-size: 100%; 
+    font-family: 'Comfortaa';
 }
 div#divImgLogin{
     background-color: #fff;
