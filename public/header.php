@@ -8,10 +8,9 @@
         <link href="public/css/bootstrap.min.css" rel="stylesheet">
         <script src="public/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="public/js/jquery.js"></script>
+        <script type="text/javascript" src="public/js/script.js"></script>
         <script type="text/javascript">
-            $(document).ready(function () {
-                $("#fecha").datepicker();
-            });
+            
             function consultaAsincrona(cedula) {
                 var parametros = {
                     "cedula": cedula
@@ -30,34 +29,6 @@
                         }
                 );
             } // consultaAsincrona
-
-
-            function consultaAsincronaRespuestaJSON(cedula) {
-                var parametros = {
-                    "cedula": cedula
-                };
-                $.ajax(
-                        {
-                            url: '?controlador=Persona&accion=listarPersonasAjax',
-                            type: 'post',
-                            beforeSend: function () {
-                                $("#resultado").html("Procesando");
-                            },
-                            success: function (respuesta) {
-                                var datos = JSON.parse(respuesta);
-                                for (var i = 0; i < datos.length; i++) {
-                                    $("#resultado").html(respuesta);
-                                    var opcion = $('<option>', {
-                                        value: datos[i].cedula,
-                                        text: datos[i].nombre
-                                    });
-                                    $("#personas").append(opcion);
-                                } // for
-
-                            }
-                        }
-                );
-            } // consultaAsincrona                    
 
         </script>
     </head>

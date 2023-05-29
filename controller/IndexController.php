@@ -18,8 +18,15 @@ class IndexController {
     
     public function mostrar() {
         
+        require 'model/InsectosModel.php';
+        
+        $insectosModel = new InsectosModel();
+        
+        $lista['lista'] = $insectosModel->obtenerOrdenes();
+        
+        $this->view->show("registrarinsectoView.php", $lista);
+        
         //$this->view->show("indexView.p", NULL);
-        $this->view->show("usuariologinView.php", NULL);
     } // mostrar
     
     
