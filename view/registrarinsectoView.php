@@ -102,29 +102,29 @@ include_once './public/header.php';
         
         <div class="row mb-2 m-1">
             <h3 class="m-3 h3 fw-normal text-light">Ubicacion de recoleccion</h3>
-            <div class="col col-10">
+            <div class="col col-10 mb-2">
                 <input name="recolector" id="recolector" type="text" class="form-control" id="floatingInput" placeholder="Recolector ej. (S.Monge)">
-                <label for="floatingInput">Nombre recolector</label>
+                
             </div>
             
-            <div class="col col-10">
+            <div class="col col-10 mb-2">
                 <input name="pais" id="pais" type="text" class="form-control" id="floatingInput" placeholder="Pais">
-                <label for="floatingInput">Pais</label>
+               
             </div>
-            <div class="col col-10">
+            <div class="col col-10 mb-2">
                 <input name="provincia" id="provincia" type="text" class="form-control" id="floatingInput" placeholder="Provincia">
-                <label for="floatingInput">Provincia</label>
+                
             </div>
-            <div class="col col-10">
+            <div class="col col-10 mb-2">
                 <input name="canton" id="canton" type="text" class="form-control" id="floatingInput" placeholder="Cantón">
-                <label for="floatingInput">Cantón</label>
+                
             </div>
-            <div class="col col-10">
+            <div class="col col-10 mb-2">
                 <input name="distrito" id="distrito" type="text" class="form-control" id="floatingInput" placeholder="Distrito">
-                <label for="floatingInput">Distrito</label>
+               
             </div>
             
-            <div class="col col-10">
+            <div class="col col-10 mb-2">
                 <input name="fecha" id="fecha" type="date" class="form-control datepicker" oninput="imprimirFecha($('#fecha').val());return false;" placeholder="Selecciona una fecha">
 
                
