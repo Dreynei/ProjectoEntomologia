@@ -202,4 +202,14 @@ class InsectosModel {
         
     }
     
+    public function buscarEspecieGenero($nombre) {
+        $consulta = $this->db->prepare("call sp_buscar_especie_genero('".$nombre."')");
+        
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchAll();
+        
+       return $resultado; 
+    }
+    
 }
