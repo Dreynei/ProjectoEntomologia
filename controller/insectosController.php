@@ -16,7 +16,6 @@ class insectosController {
     } // constructor
     
      public function mostrar() {
-        
         $this->view->show("buscarespecimenView.php", NULL);
     } // mostrar
     
@@ -258,4 +257,11 @@ class insectosController {
         $this->view->show("registrarinsectoView.php", $lista);
     }
     
+    public function buscarInsectosEG() {
+        require 'model/InsectosModel.php';
+        $insectosModel=new InsectosModel();
+        $lista['lista']=$insectosModel->buscarEspecieGenero($_POST['NombreEG']);
+        
+        $this->view->show("buscarespecimenView.php", $lista);
+    }
 }

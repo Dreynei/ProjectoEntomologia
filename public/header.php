@@ -2,16 +2,18 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Ejemplo HTML</title>
-        <meta name="description" content="Este es un ejemplo de pagina web">
+        <title>Laboratorio Entomologia</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/bootstrap.min.css" rel="stylesheet">
         <script src="public/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="public/js/jquery.js"></script>
         <script type="text/javascript" src="public/js/script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
         <script type="text/javascript">
-            
+
             function consultaAsincrona(cedula) {
                 var parametros = {
                     "cedula": cedula
@@ -35,10 +37,10 @@
     </head>
     <body>
         <!--            <div class="container">-->
-        <header>
+        <header class="bg-dark">
             <h1>Ejemplo</a></h1>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <ul class="navbar-nav" >
+            <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+                <ul class="navbar-nav " >
                     <li class="nav-item"><a class="nav-link active" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
                     <li class="nav-item"><a class="nav-link" href="?controlador=Persona&accion=mostrar">Mostrar Persona</a></li>
