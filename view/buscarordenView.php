@@ -45,12 +45,10 @@ if (isset($vars['lista'])) {
 } else {
     ?>
     <div class="alert alert-info mt-2 col-6" role="alert">
-        Busque Insectos por nombre de especie o nombre de genero
+        Busque Insectos por nombre de orden
     </div>
     <?php
 }//else
 ?>
 <?php
 include_once './public/footer.php';
-?>
-   

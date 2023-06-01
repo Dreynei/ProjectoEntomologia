@@ -212,4 +212,6 @@ class InsectosModel {
        return $resultado; 
     }
     
+    pu
+    
 }

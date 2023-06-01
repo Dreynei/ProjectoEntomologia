@@ -264,4 +264,9 @@ class insectosController {
         
         $this->view->show("buscarespecimenView.php", $lista);
     }
+    
+    public function buscarInsectoOrden() {
+        require 'model/InsectosModel.php';
+        $insectosModel=new InsectosModel();
+    }
 }

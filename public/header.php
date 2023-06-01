@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <title>Laboratorio Entomologia</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
+
         <link href="public/css/bootstrap.min.css" rel="stylesheet">
-        <script src="public/js/bootstrap.min.js"></script>
+        <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="public/js/jquery.js"></script>
         <script type="text/javascript" src="public/js/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,14 +38,25 @@
     <body>
         <!--            <div class="container">-->
         <header class="bg-dark">
-            <h1>Ejemplo</a></h1>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
-                <ul class="navbar-nav " >
-                    <li class="nav-item"><a class="nav-link active" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?controlador=Persona&accion=mostrar">Mostrar Persona</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?controlador=Persona&accion=mostrarListarPersonasAjax">Listar Personas Ajax</a></li>                                        
-                    <li class="nav-item"><a class="nav-link" href="?controlador=Persona&accion=mostrarBuscarPersonaCedula">Buscar Persona</a></li>    
+            <h1 class="text-light pt-3">Laboratorio entomología UCR</h1>
+            <nav class="navbar navbar-expand-lg bg-dark">
+                <ul class="navbar-nav" >
+                    <li class="nav-item p"><a class="nav-link active text-light" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
+                    <li><div class="dropdown bg-dark border-0">
+                            <a class="btn btn-secondary dropdown-toggle bg-dark border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+
+                            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item text-light" href="#">Action</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Another action</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
+                            </ul>
+                        </div></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrar">Mostrar Persona</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrarListarPersonasAjax">Listar Personas Ajax</a></li>                                        
+                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrarBuscarPersonaCedula">Buscar Persona</a></li>    
                 </ul>
             </nav>
         </header>

@@ -5,6 +5,10 @@ body {
     background-size: 100%; 
     font-family: 'Comfortaa', cursive;
 }
+button#buscarInsecto{
+    margin-left:  1em;
+}
+
 div#divImgLogin{
     background-color: #fff;
 }
@@ -13,16 +17,13 @@ div#contenedoRregistarAdmins{
     height: 60vh;
 }
 
-button#buscarInsecto{
-    margin-left:  1em;
-}
+
 
 footer{
     position: absolute;
     bottom: 0%;
-    width: 100%
+    width: 100%;
     
 }
-
 
 
