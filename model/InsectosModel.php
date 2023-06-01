@@ -211,7 +211,32 @@ class InsectosModel {
         
        return $resultado; 
     }
-    
-    pu
+    public function buscarOrden($nombre) {
+        $consulta = $this->db->prepare("call sp_buscar_orden('".$nombre."')");
+        
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchAll();
+        
+       return $resultado; 
+    }
+    public function buscarFamiliaRelacion($id) {
+        $consulta=$this->db->prepare("call sp_buscar_familia_relacion(".$id.")");
+        
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchAll();
+        
+       return $resultado; 
+    }
+    public function buscarFamilia($nombre) {
+        $consulta=$this->db->prepare("call 	sp_buscar_familia('".$nombre."')");
+        
+       $consulta->execute();
+       
+       $resultado = $consulta->fetchAll();
+        
+       return $resultado; 
+    }
     
 }

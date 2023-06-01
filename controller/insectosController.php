@@ -24,6 +24,11 @@ class insectosController {
         $this->view->show("registrargeneroView.php", NULL);
     } // mostrar
     
+     public function mostrarBuscarOrden() {
+         
+        $this->view->show("buscarordenView.php", NULL);
+     }
+    
     public function registrarImagen(){
         
         require 'model/InsectosModel.php';
@@ -268,5 +273,27 @@ class insectosController {
     public function buscarInsectoOrden() {
         require 'model/InsectosModel.php';
         $insectosModel=new InsectosModel();
+        $lista['lista']=$insectosModel->buscarOrden($_POST['NombreO']);
+        
+        $this->view->show("buscarordenView.php", $lista);
+    }
+    
+    public function buscarFamiliaRelacion() {
+        require 'model/InsectosModel.php';
+        $insectosModel=new InsectosModel();
+        $lista['lista']=$insectosModel->buscarFamiliaRelacion($_POST['id']);
+        
+        $this->view->show("buscarfamiliaView.php", $lista);
+    }
+      public function buscarInsectoFamilia() {
+        require 'model/InsectosModel.php';
+        $insectosModel=new InsectosModel();
+        if(isset($_POST['NombreF'])){
+        $lista['lista']=$insectosModel->buscarFamilia($_POST['NombreF']);
+        $this->view->show("buscarfamiliaView.php", $lista);
+        }else{
+           $this->view->show("buscarfamiliaView.php", null); 
+        }
+        
     }
 }

@@ -44,13 +44,13 @@
                     <li class="nav-item p"><a class="nav-link active text-light" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
                     <li><div class="dropdown bg-dark border-0">
                             <a class="btn btn-secondary dropdown-toggle bg-dark border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown link
+                                Busquedas generales
                             </a>
 
                             <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item text-light" href="#">Action</a></li>
-                                <li><a class="dropdown-item text-light" href="#">Another action</a></li>
-                                <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=mostrarBuscarOrden">Orden</a></li>
+                                <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoFamilia">Familia</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Subfamilia</a></li>
                             </ul>
                         </div></li>
                     <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
