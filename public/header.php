@@ -54,9 +54,9 @@
                             </ul>
                         </div></li>
                     <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrar">Mostrar Persona</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrarListarPersonasAjax">Listar Personas Ajax</a></li>                                        
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrarBuscarPersonaCedula">Buscar Persona</a></li>    
+                    <?php if ($_SESSION['tipo'] == 1) { ?>
+                        <li class="nav-item"><a class="nav-link text-light" href="?controlador=Usuario&accion=mostrarRegistrarUser">Registrar Usuario</a></li>
+                    <?php } ?>  
                 </ul>
             </nav>
         </header>

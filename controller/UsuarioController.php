@@ -22,6 +22,15 @@ class UsuarioController {
         $this->view->show("usuariologinView.php", null);
     }
 
+    public function mostrarRegistrarUser() {
+        require 'model/UsuarioModel.php';
+
+        $usuarioModel = new UsuarioModel();
+        $lista["lista"] = $usuarioModel->obtenerTiposUsuario();
+
+        $this->view->show("registrarusuarioView.php", $lista);
+    }
+
     public function autenticarUsuario() {
         require 'model/UsuarioModel.php';
 
@@ -37,10 +46,10 @@ class UsuarioController {
             $lista = $usuarioModel->obtenerUserInfo($_POST['usuario']);
             foreach ($lista as $userInfo) {
                 $_SESSION['id'] = $userInfo[0];
-                $_SESSION['usuario']= $userInfo[1];
-                $_SESSION['tipo']= $userInfo[2];
+                $_SESSION['usuario'] = $userInfo[1];
+                $_SESSION['tipo'] = $userInfo[2];
             }
-            
+
             $this->view->show("registrarusuarioView.php", null);
         } else {
 

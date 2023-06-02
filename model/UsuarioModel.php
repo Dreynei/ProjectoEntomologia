@@ -50,8 +50,8 @@ class UsuarioModel {
                
     }
     
-    public function obtenerUserInfo(){
-         $consulta = $this->db->prepare("call 	sp_obtener_tipo_usuario('".$usuario."')");
+    public function obtenerUserInfo($usuario){
+         $consulta = $this->db->prepare("call sp_obtener_informacion_usuario('".$usuario."')");
         
        $consulta->execute();
        
@@ -60,9 +60,9 @@ class UsuarioModel {
        return $resultado;
     }
     
-    public function obtenerTiposUsuario($usuario){
+    public function obtenerTiposUsuario(){
         
-       $consulta = $this->db->prepare("call listar_tipos_usuarios()");
+       $consulta = $this->db->prepare("call sp_listar_tipos_usuarios()");
         
        $consulta->execute();
        
