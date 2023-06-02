@@ -25,7 +25,12 @@ if (isset($vars['lista'])) {
                 <tr>
                     <td><?php echo $insecto[1]; ?></td>
                     <td class="text-center"><?php echo $insecto[2]; ?></td>
-                    <td class="d-flex justify-content-center align-content-center"><a href="url" class="btn btn-primary">Ver</a></td>
+                    <td class="d-flex justify-content-center align-content-center">
+                        <form action="?controlador=insectos&accion=buscarsubFamiliaRelacion" method="post">
+                            <input type="hidden" value="<?php echo $insecto[0]; ?>" name="id">
+                            <button type="submit" class="btn btn-primary">Ver</button>
+                        </form>
+                    </td>
                 </tr>
                 <?php
             } // foreach 

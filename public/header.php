@@ -50,7 +50,7 @@
                             <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=mostrarBuscarOrden">Orden</a></li>
                                 <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoFamilia">Familia</a></li>
-                                <li><a class="dropdown-item text-light" href="#">Subfamilia</a></li>
+                                <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoSubfamilia">Subfamilia</a></li>
                             </ul>
                         </div></li>
                     <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
