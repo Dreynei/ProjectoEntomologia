@@ -11,7 +11,7 @@
  * @author drey0
  */
 class carritoController {
-    
+
     public function __construct() {
         $this->view = new View();
     }
@@ -21,8 +21,13 @@ class carritoController {
     public function mostrar() {
         $this->view->show("carritoView.php", null);
     }
-    
+
     function registrarInsectoCarrito() {
-        
+        require 'model/CarritoModel.php';
+        $carritoModel = new CarritoModel();
+        $resultado = $carritoModel->registrarCarrito($_POST['id_usuario'], $_POST['id_especimen']);
+        echo $resultado;
     }
+       
 }
+    
