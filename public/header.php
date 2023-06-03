@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+    <?php session_start(); ?>
     <head>
         <meta charset="utf-8">
         <title>Laboratorio Entomologia</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <link href="public/css/bootstrap.min.css" rel="stylesheet">
-        <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="public/css/estilo.css" rel="stylesheet"/>
         <script type="text/javascript" src="public/js/jquery.js"></script>
         <script type="text/javascript" src="public/js/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-        <script type="text/javascript">
-
-        </script>
     </head>
     <body>
         <!--            <div class="container">-->
         <header class="bg-dark">
             <h1 class="text-light pt-3">Laboratorio entomología UCR</h1>
             <nav class="navbar navbar-expand-lg bg-dark">
-                <ul class="navbar-nav" >
-                    <li class="nav-item p"><a class="nav-link active text-light" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
-                    <li><div class="dropdown bg-dark border-0 ">
+                <ul class="navbar-nav mr-auto col-10" >
+                    <li class="nav-item"><a class="nav-link active text-light" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
+                    <li><div class="dropdown bg-dark border-0">
                             <a class="btn btn-secondary dropdown-toggle bg-dark border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Busquedas generales
                             </a>
@@ -35,10 +33,14 @@
                             </ul>
                         </div></li>
                     <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrar">Mostrar Persona</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrarListarPersonasAjax">Listar Personas Ajax</a></li>                                        
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=Persona&accion=mostrarBuscarPersonaCedula">Buscar Persona</a></li>    
+                    <?php if ($_SESSION['tipo'] == 1) { ?>
+                        <li class="nav-item"><a class="nav-link text-light" href="?controlador=Usuario&accion=mostrarRegistrarUser">Registrar Usuario</a></li>
+                    <?php } ?>  
+<!--                        <li class="nav-item align-content-start"><a class="btn" id="carrito"></a></li>-->
                 </ul>
+                <div class="col-2 d-flex justify-content-end"><a class="nav-link" id="carrito" href="?controlador=carrito&accion=mostrar"></a></div>
+                  
             </nav>
+            
         </header>
 

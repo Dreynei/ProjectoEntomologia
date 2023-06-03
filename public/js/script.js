@@ -235,6 +235,32 @@ function registrarEspecie(especie, genero) {
     );
 } // consultaAsincrona
 
+function registrarCarrito(id_usuario,id_especimen){
+    console.log(id_usuario+" "+id_especimen);
+    
+    
+     var parametros = {
+        "id_usuario": id_usuario,
+        "id_especimen": id_especimen
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=carrito&accion=registrarInsectoCarrito',
+                type: 'post',
+                beforeSend: function () {
+                    //$("#resultadoEspecie").html("Procesando Especie");
+                },
+                success: function (respuesta) {
+                   
+                   alert(respuesta);
+                    //$("#resultadoEspecie").html(respuesta);
+                   
+                }
+            }
+    );
+}
+
 function abrirModalOrden(){
     
     $('#modalOrden').modal('show');
