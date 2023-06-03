@@ -14,25 +14,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
         <script type="text/javascript">
 
-            function consultaAsincrona(cedula) {
-                var parametros = {
-                    "cedula": cedula
-                };
-                $.ajax(
-                        {
-                            data: parametros,
-                            url: '?controlador=Persona&accion=buscarPersonaCedula',
-                            type: 'post',
-                            beforeSend: function () {
-                                $("#resultado").html("Procesando");
-                            },
-                            success: function (respuesta) {
-                                $("#resultado").html(respuesta);
-                            }
-                        }
-                );
-            } // consultaAsincrona
-
         </script>
     </head>
     <body>
@@ -42,7 +23,7 @@
             <nav class="navbar navbar-expand-lg bg-dark">
                 <ul class="navbar-nav" >
                     <li class="nav-item p"><a class="nav-link active text-light" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
-                    <li><div class="dropdown bg-dark border-0">
+                    <li><div class="dropdown bg-dark border-0 ">
                             <a class="btn btn-secondary dropdown-toggle bg-dark border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Busquedas generales
                             </a>

@@ -48,4 +48,4 @@ if (isset($vars['lista'])) {
 ?>
 <?php
 include_once './public/footer.php';
-
+?>

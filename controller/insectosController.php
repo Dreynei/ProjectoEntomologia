@@ -46,7 +46,7 @@ class insectosController {
 
         return $respuesta;
     }
-
+    
     public function registrarInsecto() {
 
         require 'model/InsectosModel.php';
@@ -73,6 +73,7 @@ class insectosController {
 
         $lista['lista'] = $insectosModel->obtenerOrdenes();
 
+        
         $this->view->show("registrarinsectoView.php", $lista);
     }
 
@@ -95,7 +96,11 @@ class insectosController {
 
         $insectosModel = new InsectosModel();
 
-        $respuesta = $insectosModel->mostrarImagen();
+        $lista['lista'] = $insectosModel->mostrarImagen(//$_POST['especimen']
+        "NuevaEspecie");
+         
+        $this->view->show("mostrarpruebaespecimenesView.php", $lista);
+        
     }
 
     public function registrarOrden() {

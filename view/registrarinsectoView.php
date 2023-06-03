@@ -8,8 +8,8 @@ include_once './public/header.php';
        echo "<div class='alert alert-dark text-center' role='alert'>" . $mensaje . "</div>";
     }
     ?>
-<div class="contenedor "></div>
-<div class="contenedor d-flex align-items-center justify-content-center w-100 mt-5 ">
+<div class="container"></div>
+<div class="container d-flex align-items-center justify-content-center w-100 mt-5 ">
     <form class="bg-dark w-75 rounded-4" method="POST" action="?controlador=insectos&accion=registrarInsecto" enctype="multipart/form-data">
 
         <h1 class="m-3 h3 fw-normal text-light">Registro nuevo insecto</h1>
