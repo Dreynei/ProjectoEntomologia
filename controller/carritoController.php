@@ -19,7 +19,10 @@ class carritoController {
 //constructor
 
     public function mostrar() {
-        $this->view->show("carritoView.php", null);
+        require 'model/CarritoModel.php';
+        $carritoModel = new CarritoModel();
+        $lista["lista"] = $carritoModel->registrarCarrito($_SESSION['id']);
+        $this->view->show("carritoView.php",$lista);
     }
 
     function registrarInsectoCarrito() {
@@ -28,6 +31,6 @@ class carritoController {
         $resultado = $carritoModel->registrarCarrito($_POST['id_usuario'], $_POST['id_especimen']);
         echo $resultado;
     }
-       
+    
 }
     

@@ -16,6 +16,12 @@ class CarritoModel {
         return $resultado;
     } 
     
+    public function mostrarCarrito($id) {
+        $consulta=$this->db->prepare("call sp_obtener_carrito(".$id_usuario.")");
+        $resultado=$consulta->execute();
+        return $resultado;
+    }
+    
     
     
     

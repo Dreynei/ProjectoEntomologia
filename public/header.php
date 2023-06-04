@@ -1,6 +1,13 @@
+<?php
+    
+    if (!isset($_SESSION['usuario'])) {
+       header("Location: ?controlador=Usuario&accion=mostrar");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-    <?php session_start(); ?>
     <head>
         <meta charset="utf-8">
         <title>Laboratorio Entomologia</title>
@@ -15,6 +22,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     </head>
     <body>
+        <p><?php $_SESSION['usuario']?></p>
         <!--            <div class="container">-->
         <header class="bg-dark">
             <h1 class="text-light pt-3">Laboratorio entomología UCR</h1>
@@ -36,11 +44,11 @@
                     <?php if ($_SESSION['tipo'] == 1) { ?>
                         <li class="nav-item"><a class="nav-link text-light" href="?controlador=Usuario&accion=mostrarRegistrarUser">Registrar Usuario</a></li>
                     <?php } ?>  
-<!--                        <li class="nav-item align-content-start"><a class="btn" id="carrito"></a></li>-->
+                    <!--                        <li class="nav-item align-content-start"><a class="btn" id="carrito"></a></li>-->
                 </ul>
-                <div class="col-2 d-flex justify-content-end"><a class="nav-link" id="carrito" href="?controlador=carrito&accion=mostrar"></a></div>
-                  
+                <div class=" col-2 d-flex justify-content-end"><a class="nav-link" id="carrito" href="?controlador=carrito&accion=mostrar"></a><a class="nav-link ml-2" id="logout" href="?controlador=Usuario&accion=logout"></a></div>
+
             </nav>
-            
+
         </header>
 

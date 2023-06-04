@@ -42,6 +42,8 @@ class UsuarioController {
         );
 
         if ($resultado) {
+            echo "<script>console.log('Debug Objects:' );</script>";
+            error_log("hola");
             session_start();
             $lista = $usuarioModel->obtenerUserInfo($_POST['usuario']);
             foreach ($lista as $userInfo) {
@@ -52,7 +54,7 @@ class UsuarioController {
 
             $this->view->show("registrarusuarioView.php", null);
         } else {
-
+            error_log("hola");
             $this->view->show("usuariologinView.php", null);
         }
     }
@@ -81,6 +83,13 @@ class UsuarioController {
         $lista["lista"] = $usuarioModel->obtenerTiposUsuario();
 
         $this->view->show("registrarusuarioView.php", $lista);
+    }
+
+    public function logout() {
+        if (isset($_SESSION)) {
+            session_destroy();
+        }
+        $this->view->show("usuariologinView.php", null);
     }
 
 }
