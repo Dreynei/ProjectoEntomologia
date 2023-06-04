@@ -65,10 +65,10 @@ class insectosController {
 
         if ($respuesta) {
 
-            $lista['mensaje'] = array("Registrado correctamente");
+            $lista['mensaje'] = array("Insecto registrado correctamente");
         } else {
 
-            $lista['mensaje'] = array("No se ha podido registrar");
+            $lista['mensaje'] = array("No se ha podido registrar el insecto");
         }
 
         $lista['lista'] = $insectosModel->obtenerOrdenes();
@@ -113,10 +113,10 @@ class insectosController {
 
         if ($respuesta) {
 
-            $lista['mensaje'] = array("Registrado correctamente");
+            $lista['mensaje'] = array("Orden registrado correctamente");
         } else {
 
-            $lista['mensaje'] = array("No se ha podido registrar");
+            $lista['mensaje'] = array("No se ha podido registrar el orden");
         }
 
         $lista['lista'] = $insectosModel->obtenerOrdenes();

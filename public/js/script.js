@@ -135,7 +135,7 @@ function registrarOrden(orden) {
                     $("#resultadoOrden").html("Procesando Orden");
                 },
                 success: function (respuesta) {
-                   
+  
                     $("#resultadoOrden").html(respuesta);
                    
                 }
@@ -159,6 +159,15 @@ function registrarFamilia(familia, orden) {
                 },
                 success: function (respuesta) {
                    
+                    if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var datalist = document.getElementById('reFamiliaList');
+                        var option =  document.createElement('option');
+                        option.text = familia;
+                        
+                        datalist.appendChild(option);
+                    }
+                                     
                     $("#resultadoFamilia").html(respuesta);
                    
                 }
@@ -181,6 +190,15 @@ function registrarSubfamilia(subfamilia, familia) {
                     $("#resultadoSubfamilia").html("Procesando Subfamilia");
                 },
                 success: function (respuesta) {
+                   
+                   if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var datalist = document.getElementById('reSubFList');
+                        var option =  document.createElement('option');
+                        option.text = subfamilia;
+                        
+                        datalist.appendChild(option);
+                    }
                    
                     $("#resultadoSubfamilia").html(respuesta);
                    
@@ -205,6 +223,15 @@ function registrarGenero(genero, subfamilia) {
                 },
                 success: function (respuesta) {
                    
+                   if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var datalist = document.getElementById('reGeneroList');
+                        var option =  document.createElement('option');
+                        option.text = genero;
+                        
+                        datalist.appendChild(option);
+                    }
+                   
                     $("#resultadoGenero").html(respuesta);
                    
                 }
@@ -227,6 +254,15 @@ function registrarEspecie(especie, genero) {
                     $("#resultadoEspecie").html("Procesando Especie");
                 },
                 success: function (respuesta) {
+                   
+                   if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var datalist = document.getElementById('reEspecieList');
+                        var option =  document.createElement('option');
+                        option.text = especie;
+                        
+                        datalist.appendChild(option);
+                    }
                    
                     $("#resultadoEspecie").html(respuesta);
                    
