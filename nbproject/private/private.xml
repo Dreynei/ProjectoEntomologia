@@ -5,13 +5,10 @@
         <group>
             <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/public/header.php</file>
             <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/UsuarioController.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/carritoController.php</file>
             <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/buscarespecimenView.php</file>
             <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/registrarusuarioView.php</file>
             <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/public/js/script.js</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/carritoView.php</file>
             <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/insectosController.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/model/CarritoModel.php</file>
         </group>
     </open-files>
 </project-private>
