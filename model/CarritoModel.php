@@ -11,9 +11,8 @@ class CarritoModel {
     
     public function registrarCarrito($id_usuario, $id_especimen) {
         
-        $consulta=$this->db->prepare("call sp_select_canton(".$cod_canton.")");
-        $consulta->execute();
-        $resultado=$consulta->fetchAll();
+        $consulta=$this->db->prepare("call sp_registrar_carrito(".$id_usuario.",".$id_especimen.",0)");
+        $resultado=$consulta->execute();
         return $resultado;
     } 
     

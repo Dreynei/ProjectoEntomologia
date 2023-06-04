@@ -32,9 +32,12 @@ if (isset($vars['lista'])) {
                     <td><?php echo $insecto[4]; ?></td>
                     <td><?php echo $insecto[5]; ?></td>
                     <td><div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" onclick="" id="flexSwitchCheckDefault">
+                            <form action="action">
+                                <input class="form-check-input" type="checkbox" onchange="registrarCarrito(<?php echo $_SESSION['id'];?>,<?php echo $insecto[0];?>);return false;" id="flexSwitchCheckDefault">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Agregar</label>
-                        </div></td>
+                            </form>
+                        </div>
+                    </td>
                 </tr>
                 <?php
             } // foreach 

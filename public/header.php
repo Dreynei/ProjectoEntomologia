@@ -13,28 +13,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-        <script type="text/javascript">
-
-            function consultaAsincrona(cedula) {
-                var parametros = {
-                    "cedula": cedula
-                };
-                $.ajax(
-                        {
-                            data: parametros,
-                            url: '?controlador=Persona&accion=buscarPersonaCedula',
-                            type: 'post',
-                            beforeSend: function () {
-                                $("#resultado").html("Procesando");
-                            },
-                            success: function (respuesta) {
-                                $("#resultado").html(respuesta);
-                            }
-                        }
-                );
-            } // consultaAsincrona
-
-        </script>
     </head>
     <body>
         <!--            <div class="container">-->

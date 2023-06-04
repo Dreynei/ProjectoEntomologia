@@ -8,8 +8,8 @@ include_once './public/header.php';
        echo "<div class='alert alert-dark text-center' role='alert'>" . $mensaje . "</div>";
     }
     ?>
-<div class="contenedor "></div>
-<div class="contenedor d-flex align-items-center justify-content-center w-100 mt-5 ">
+<div class="container"></div>
+<div class="container d-flex align-items-center justify-content-center w-100 mt-5 ">
     <form class="bg-dark w-75 rounded-4" method="POST" action="?controlador=insectos&accion=registrarInsecto" enctype="multipart/form-data">
 
         <h1 class="m-3 h3 fw-normal text-light">Registro nuevo insecto</h1>
@@ -17,7 +17,7 @@ include_once './public/header.php';
         <div class="row mb-2 m-1">
             <h3 class="m-3 h3 fw-normal text-light">Informacion insecto</h3>
             <div class="col col-10">
-                <input name="orden" class="form-control" list="reOrdenList" id="reOrden" oninput="consultaAsincronaFamiliaJSON($('#reOrden').val());return false;" placeholder="Tipea para buscar orden...">
+                <input name="orden" class="form-control" list="reOrdenList" id="reOrden" oninput="consultaAsincronaFamiliaJSON($('#reOrden').val());return false;" placeholder="Tipea para buscar orden..." required>
                 <datalist name="listOrden" id="reOrdenList">
                    <?php
                         foreach ($vars['lista'] as $orden) {
@@ -40,7 +40,7 @@ include_once './public/header.php';
 
         <div class="row mb-2 m-1">
             <div class="col col-10">
-                <input class="form-control" name="familia" autocomplete="off" list="reFamiliaList" id="reFamilia" oninput="consultaAsincronaSubfamiliaJSON($('#reFamilia').val());return false;" placeholder="Tipea para buscar familia...">
+                <input class="form-control" name="familia" autocomplete="off" list="reFamiliaList" id="reFamilia" oninput="consultaAsincronaSubfamiliaJSON($('#reFamilia').val());return false;" placeholder="Tipea para buscar familia..." required>
                 <datalist id="reFamiliaList">
                    
                 </datalist>

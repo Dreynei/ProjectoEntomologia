@@ -2,12 +2,12 @@
 include_once './public/header.php';
 ?>
 
- //<?php
-//    if (!empty($vars['mensaje'])) {
-//       $mensaje = $vars['mensaje'][0];
-//       echo "<div class='alert alert-dark text-center' role='alert'>" . $mensaje . "</div>";
-//    }
-//    ?>
+ <?php
+    if (!empty($vars['mensaje'])) {
+       $mensaje = $vars['mensaje'][0];
+       echo "<div class='alert alert-dark text-center' role='alert'>" . $mensaje . "</div>";
+    }
+    ?>
 
 <div id="contenedoRregistarAdmins" class="container d-flex align-items-center justify-content-center ">         
     <form method="POST" id="" class="bg-dark" action="?controlador=Usuario&accion=registrarUsuario">
