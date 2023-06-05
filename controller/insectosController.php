@@ -54,15 +54,33 @@ class insectosController {
 
         $insectosModel = new InsectosModel();
 
-        $idImagen = $insectosModel->registrarImagen($_FILES['imagen']['name'],
+        if(!isset($_POST['gabineteOCaja']) || !isset($_POST['gabetaOVial'])){
+            
+             $respuesta = $insectosModel->registrarInsectoGabeta($_FILES['imagen']['name'],
                 $_FILES['imagen']['type'], $_FILES['imagen']['size'],
-                $_FILES['imagen']['tmp_name']);
-
-        $idRecoleccion = $insectosModel->registrarRecoleccion($_POST['recolector'],
+                $_FILES['imagen']['tmp_name'], $_POST['recolector'],
                 $_POST['pais'], $_POST['provincia'], $_POST['canton'],
-                $_POST['distrito'], $_POST['fecha']);
-
-        $respuesta = $insectosModel->registrarInsecto($idImagen, $idRecoleccion, $_POST['especie']);
+                $_POST['distrito'], $_POST['fecha'], $_POST['especie'], 
+                $_POST['almacen'], 0, 0);
+            
+        }else{
+        
+        $respuesta = $insectosModel->registrarInsectoGabeta($_FILES['imagen']['name'],
+                $_FILES['imagen']['type'], $_FILES['imagen']['size'],
+                $_FILES['imagen']['tmp_name'], $_POST['recolector'],
+                $_POST['pais'], $_POST['provincia'], $_POST['canton'],
+                $_POST['distrito'], $_POST['fecha'], $_POST['especie'], 
+                $_POST['almacen'],  $_POST['gabineteOCaja'], $_POST['gabetaOVial']);
+        }
+//        $idImagen = $insectosModel->registrarImagen($_FILES['imagen']['name'],
+//                $_FILES['imagen']['type'], $_FILES['imagen']['size'],
+//                $_FILES['imagen']['tmp_name']);
+//
+//        $idRecoleccion = $insectosModel->registrarRecoleccion($_POST['recolector'],
+//                $_POST['pais'], $_POST['provincia'], $_POST['canton'],
+//                $_POST['distrito'], $_POST['fecha']);
+//
+//        $respuesta = $insectosModel->registrarInsecto($idImagen, $idRecoleccion, $_POST['especie']);
 
         if ($respuesta) {
 
@@ -73,7 +91,8 @@ class insectosController {
         }
 
         $lista['lista'] = $insectosModel->obtenerOrdenes();
-
+        
+        $lista['almacen'] = $insectosModel->listarAlmacenes();
         
         $this->view->show("registrarinsectoView.php", $lista);
     }
