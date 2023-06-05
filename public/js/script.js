@@ -10,7 +10,7 @@ function consultaAsincronaFamiliaJSON(orden) {
                 url: '?controlador=insectos&accion=listarFamiliasAjax',
                 type: 'post',
                 beforeSend: function () {
-                    $("#resultado").html("Procesando");
+                    $("#resultado").html("Procesando Familia");
                 },
                 success: function (respuesta) {
                     var datos = JSON.parse(respuesta);
@@ -41,7 +41,7 @@ function consultaAsincronaSubfamiliaJSON(familia) {
                 url: '?controlador=insectos&accion=listarSubfamiliasAjax',
                 type: 'post',
                 beforeSend: function () {
-                    $("#resultado").html("Procesando");
+                    $("#resultado").html("Procesando Subfamilia");
                 },
                 success: function (respuesta) {
                     var datos = JSON.parse(respuesta);
@@ -71,7 +71,7 @@ function consultaAsincronaGeneroJSON(subfamilia) {
                 url: '?controlador=insectos&accion=listarGenerosAjax',
                 type: 'post',
                 beforeSend: function () {
-                    $("#resultado").html("Procesando");
+                    $("#resultado").html("Procesando Genero");
                 },
                 success: function (respuesta) {
                     var datos = JSON.parse(respuesta);
@@ -102,7 +102,7 @@ function consultaAsincronaEspecieJSON(genero) {
                 url: '?controlador=insectos&accion=listarEspeciesAjax',
                 type: 'post',
                 beforeSend: function () {
-                    $("#resultado").html("Procesando");
+                    $("#resultado").html("Procesando Especie");
                 },
                 success: function (respuesta) {
                     var datos = JSON.parse(respuesta);
@@ -120,6 +120,39 @@ function consultaAsincronaEspecieJSON(genero) {
             }
     );
 } // consultaAsincrona
+
+function registrarAlmacen(almacen){
+    
+    var parametros = {
+        "almacen": almacen
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=insectos&accion=registrarAlmacen',
+                type: 'post',
+                beforeSend: function () {
+                    $("#resultadoAlmacen").html("Procesando Almacen");
+                },
+                success: function (respuesta) {
+                    
+                     if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var select = document.getElementById('almacen');
+                        var option =  document.createElement('option');
+                        option.text = almacen;
+                        
+                        select.appendChild(option);
+                    }
+                    
+                
+                    $("#resultadoAlmacen").html(respuesta);
+                    $("#nuevoAlmacen").val("");
+                }
+            }
+    );
+    
+}
 
 function registrarOrden(orden) {
    
@@ -308,18 +341,147 @@ function accionAlmacen(almacen){
         var etiquetaGabeta = document.getElementById('labelGabetaOV');
         etiquetaGabeta.textContent = "Gabeta";
         
+        /*
+         * Traer todos los gabinetes
+         */
+        
+    $.ajax(
+            {
+               
+                url: '?controlador=insectos&accion=listarGabinetes',
+                type: 'post',
+                beforeSend: function () {
+                    //$("#resultadoEspecie").html("Procesando Especie");
+                },
+                success: function (respuesta) {
+                   
+                    var datos = JSON.parse(respuesta);
+                    $("#gabineteOCaja").empty();
+                    
+                     var opcion = $('<option>', {
+                           
+                            text: "Seleccione Gabinete"
+                        });
+                        $("#gabineteOCaja").append(opcion);
+                    for (var i = 0; i < datos.length; i++) {
+                        
+                        var opcion = $('<option>', {
+                           
+                            text: datos[i].id_gabinete
+                        });
+                        $("#gabineteOCaja").append(opcion);
+                    } // for
+                   
+                }
+            }
+    );
+        
         return;
     }
     
-    if(almacen.trim() === "Caja"){
+    else if(almacen.trim() === "Caja"){
         var etiquetaCaja = document.getElementById('labelGabineteOC');
         etiquetaCaja.textContent = "Caja";
         
-        var etiquetaGabeta = document.getElementById('labelGabetaOV');
-        etiquetaGabeta.textContent = "Vial";
+        var etiquetaVial = document.getElementById('labelGabetaOV');
+        etiquetaVial.textContent = "Vial";
+          
+        $.ajax(
+            {
+               
+                url: '?controlador=insectos&accion=listarCajas',
+                type: 'post',
+                beforeSend: function () {
+                    //$("#resultadoEspecie").html("Procesando Especie");
+                },
+                success: function (respuesta) {
+                   
+                    var datos = JSON.parse(respuesta);
+                    $("#gabineteOCaja").empty();
+                    
+                     var opcion = $('<option>', {
+                           
+                            text: "Seleccione Caja"
+                        });
+                        $("#gabineteOCaja").append(opcion);
+                    for (var i = 0; i < datos.length; i++) {
+                        
+                        var opcion = $('<option>', {
+                           
+                            text: datos[i].id_caja
+                        });
+                        $("#gabineteOCaja").append(opcion);
+                    } // for
+                   
+                }
+            }
+    );  
+          
           
         return;
     }
+    else{
+        
+         var etiquetaGabineteOC = document.getElementById('labelGabineteOC');
+        etiquetaGabineteOC.textContent = "INDEFINIDO";
+        
+        var etiquetaGabetaOV = document.getElementById('labelGabetaOV');
+        etiquetaGabetaOV.textContent = "INDEFINIDO";
+        
+    }
+    
+}
+
+function listarGabetasOV(almacen, gabineteOC){
+    
+    alert("ALMACEN:"+almacen);
+    alert("GABINETEOC"+gabineteOC);
+    
+     var parametros = {
+        "almacen": almacen,
+        "gabineteOC": gabineteOC
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=insectos&accion=listarGabetasOV',
+                type: 'post',
+                beforeSend: function () {
+                    //$("#resultadoEspecie").html("Procesando Especie");
+                },
+                success: function (respuesta) {
+                   
+                   //alert("Respuesta"+respuesta);
+                   
+                    var datos = JSON.parse(respuesta);
+                    $("#gabetaOVial").empty();
+                    
+                    if(almacen.trim() === "Gabinete"){
+                    for (var i = 0; i < datos.length; i++) {
+
+                        var opcion = $('<option>', {
+
+                            text: datos[i].id_gabeta
+                        });
+                        $("#gabetaOVial").append(opcion);
+                    } // for
+                }
+                
+                if(almacen.trim() === "Caja"){
+                    
+                    for (var i = 0; i < datos.length; i++) {
+
+                        var opcion = $('<option>', {
+
+                            text: datos[i].id_vial
+                        });
+                        $("#gabetaOVial").append(opcion);
+                    } // for
+                }
+                
+                }
+            }
+    );
     
 }
 
@@ -353,6 +515,12 @@ function abrirModalEspecie(){
      
 }
 
+function abrirModalAlmacen(){
+    
+    $('#modalAlmacen').modal('show');
+     
+}
+
 function cerrarModalOrden(){
     
     $('#modalOrden').modal('hide');
@@ -376,6 +544,11 @@ function cerrarModalGenero(){
 function cerrarModalEspecie(){
     
     $('#modalEspecie').modal('hide');
+}
+
+function cerrarModalAlmacen(){
+    
+    $('#modalAlmacen').modal('hide');
 }
 
 

@@ -120,26 +120,37 @@ include_once './public/header.php';
                     ?> 
 
                 </select>
-
+                
+            </div>
+            <div class="col col-1">
+                <input id="b" type="button" value="+" onclick="abrirModalAlmacen()" class="form-control d-flex justify-content-center align-items-center">
             </div>
             
-              <div class="col col-5 mb-2 form-floating">
-                <select id="gabineteOCaja" name="gabineteOCaja" class="form-select">
+            
+              <div class="col col-4 mb-2 form-floating">
+                  <select id="gabineteOCaja" name="gabineteOCaja" onchange="listarGabetasOV($('#almacen').val(),$('#gabineteOCaja').val());return false;" class="form-select pb-1">
                     
                    
                 </select>
-                  <label id="labelGabineteOC" for="form-select" class="m-1">Gabinete o Caja</label>
+                  <label id="labelGabineteOC" for="form-select" class="m-1 text-dark">Gabinete o Caja</label>
               </div>
             
+             <div class="col col-1">
+                <input id="b" type="button" value="+" onclick="abrirModalOrden()" class="form-control d-flex justify-content-center align-items-center">
+            </div>
                 
-                <div class="col col-5 mb-2 form-floating">
-                <select id="gabetaOVial" name="gabetaOVial" class="form-select">
+                <div class="col col-4 mb-2 form-floating">
+                <select id="gabetaOVial" name="gabetaOVial" class="form-select pb-1">
                     
                    
                 </select>
-                    <label id="labelGabetaOV" for="form-select" class="m-1" >Gabeta o Vial</label>
+                    <label id="labelGabetaOV" for="form-select" class="m-1 text-dark" >Gabeta o Vial</label>
               </div>
                 
+             <div class="col col-1">
+                <input id="b" type="button" value="+" onclick="abrirModalOrden()" class="form-control d-flex justify-content-center align-items-center">
+            </div>
+            
         </div>
 
         
@@ -328,6 +339,36 @@ include_once './public/header.php';
     </div>
   </div>
 </div>
+ 
+  <!-- Modal Registro Almacen -->
+<div class="modal fade" id="modalAlmacen" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="ModalLabel">Registrar Almacen</h5>
+        
+      </div>
+      <div class="modal-body">
+        
+        
+        <div class="col col-10 mt-2">
+            <input name="nuevoAlmacen" id="nuevoAlmacen" type="text" class="form-control" id="floatingInput" placeholder="Almacen">
+        </div>
+        
+          <span class="m-3 form-label text-center" id="resultadoAlmacen">Esperando Almacen
+            </span>
+        
+          
+      </div>
+      <div class="modal-footer">
+          <button type="button" onclick="registrarAlmacen($('#nuevoAlmacen').val());return false;" class="btn btn-primary">Registrar</button>
+          <button type="button" onclick="cerrarModalAlmacen()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          
+      </div>
+    </div>
+  </div>
+</div>
+ 
  
 <?php
 include_once './public/footer.php';

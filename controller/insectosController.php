@@ -78,6 +78,47 @@ class insectosController {
         $this->view->show("registrarinsectoView.php", $lista);
     }
 
+    public function listarGabinetes(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $lista = $insectosModel->listarGabinetes();
+
+        echo json_encode($lista);
+    }
+    
+    public function listarCajas(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $lista = $insectosModel->listarCajas();
+
+        echo json_encode($lista);
+        
+    }
+    
+    public function listarGabetasOV(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+        
+        if($_POST['almacen'] === "Gabinete"){
+            $lista = $insectosModel->listarGabetas($_POST['gabineteOC']);
+        }
+        
+        if($_POST['almacen'] === "Caja"){
+        $lista = $insectosModel->listarViales($_POST['gabineteOC']);
+        }
+        
+        echo json_encode($lista);
+        
+    }
+    
     public function registrarRecoleccion() {
 
         require 'model/InsectosModel.php';
@@ -125,6 +166,26 @@ class insectosController {
         $this->view->show("registrarinsectoView.php", $lista);
     }
 
+    public function registrarAlmacen(){
+        
+       require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $respuesta = $insectosModel->registrarAlmacen($_POST['almacen']);
+
+        if ($respuesta) {
+
+            $mensaje = "Registrado correctamente";
+        } else {
+
+            $mensaje = "No se ha podido registrar";
+        }
+
+        echo $mensaje;
+        
+    }
+    
     public function registrarFamilia() {
 
         require 'model/InsectosModel.php';
