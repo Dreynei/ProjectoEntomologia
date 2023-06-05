@@ -82,6 +82,18 @@ class InsectosModel {
        return $resultado;
     }
 
+    public function listarAlmacenes(){
+        
+        $consulta = $this->db->prepare("call sp_listar_almacenes()");
+
+        $consulta->execute();
+
+        $resultado = $consulta->fetchAll();
+
+        return $resultado;
+        
+    }
+    
     public function listarFamilias($orden) {
 
         $consulta = $this->db->prepare("call sp_listar_familias('" . $orden . "')");

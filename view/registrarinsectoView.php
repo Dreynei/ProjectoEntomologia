@@ -85,7 +85,13 @@ include_once './public/header.php';
                 <input id="b" type="button" value="+" onclick="abrirModalEspecie()" class="form-control d-flex justify-content-center align-items-center">
             </div>
         </div>
+            
+        <div class="form-label text-light d-flex justify-content-center align-items-center">
+            <span id="resultado">Esperando prediccion
+            </span>
+        </div>
         
+        <h1 class="m-3 h3 fw-normal text-light">Imagen Insecto</h1>
         <div class="row mb-2 m-1">
         <div class="col col-10">
         
@@ -94,11 +100,48 @@ include_once './public/header.php';
         
         </div>
         </div>
+        
+        <h1 class="m-3 h3 fw-normal text-light">Almacen del insecto</h1>
+        
+
+        <div class="row mb-2 m-1">
+            <div class="col col-10 mb-2">
+                <select id="almacen" name="almacen" onchange="accionAlmacen($('#almacen').val());return false;" class="form-select">
+                    <option>Seleccione un almacen</option>
+                    <?php
+                    foreach ($vars['almacen'] as $almacen) {
+                        ?>
+
+                        <option><?php echo $almacen[0]; ?></option>
+
+
+                        <?php
+                    }//foreach
+                    ?> 
+
+                </select>
+
+            </div>
             
-        <div class="form-label text-light d-flex justify-content-center align-items-center">
-            <span id="resultado">Esperando prediccion
-            </span>
+              <div class="col col-5 mb-2 form-floating">
+                <select id="gabineteOCaja" name="gabineteOCaja" class="form-select">
+                    
+                   
+                </select>
+                  <label id="labelGabineteOC" for="form-select" class="m-1">Gabinete o Caja</label>
+              </div>
+            
+                
+                <div class="col col-5 mb-2 form-floating">
+                <select id="gabetaOVial" name="gabetaOVial" class="form-select">
+                    
+                   
+                </select>
+                    <label id="labelGabetaOV" for="form-select" class="m-1" >Gabeta o Vial</label>
+              </div>
+                
         </div>
+
         
         <div class="row mb-2 m-1">
             <h3 class="m-3 h3 fw-normal text-light">Ubicacion de recoleccion</h3>
