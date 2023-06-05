@@ -2,7 +2,7 @@
     
     if (!isset($_SESSION['usuario'])) {
        header("Location: ?controlador=Usuario&accion=mostrar");
-        exit();
+       exit();
     }
 ?>
 

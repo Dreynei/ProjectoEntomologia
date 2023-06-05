@@ -14,6 +14,7 @@ class carritoController {
 
     public function __construct() {
         $this->view = new View();
+        session_start();
     }
 
 //constructor
@@ -21,7 +22,7 @@ class carritoController {
     public function mostrar() {
         require 'model/CarritoModel.php';
         $carritoModel = new CarritoModel();
-        $lista["lista"] = $carritoModel->registrarCarrito($_SESSION['id']);
+        $lista["lista"] = $carritoModel->mostrarCarrito($_SESSION['id']);
         $this->view->show("carritoView.php",$lista);
     }
 

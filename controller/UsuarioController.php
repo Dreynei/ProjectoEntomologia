@@ -23,6 +23,7 @@ class UsuarioController {
     }
 
     public function mostrarRegistrarUser() {
+        session_start();
         require 'model/UsuarioModel.php';
 
         $usuarioModel = new UsuarioModel();

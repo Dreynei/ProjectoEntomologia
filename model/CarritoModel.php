@@ -17,8 +17,9 @@ class CarritoModel {
     } 
     
     public function mostrarCarrito($id) {
-        $consulta=$this->db->prepare("call sp_obtener_carrito(".$id_usuario.")");
+        $consulta=$this->db->prepare("call sp_obtener_carrito(".$id.")");
         $resultado=$consulta->execute();
+        $resultado = $consulta->fetchAll();
         return $resultado;
     }
     
