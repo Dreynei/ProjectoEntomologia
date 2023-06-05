@@ -8,7 +8,15 @@ class CultivoController {
     }
     
     public function mostrar() {
-        $this->view->show("cultivoView.php",null);
+        require 'model/CultivoModel.php';
+
+        $cultivoModel = new CultivoModel();
+
+        $respuesta1 = $cultivoModel->obtenerGeneros();
+        $respuesta2 = $cultivoModel->obtenerCultivos();
+        $lista['genero']=$respuesta1;
+        $lista['cultivo']=$respuesta2;
+        $this->view->show("cultivoView.php",$lista);
     }
     
     public function registrarCultivo() {
@@ -25,7 +33,30 @@ class CultivoController {
 
             $lista['mensaje'] = array("No se ha podido registrar el cultivo");
         }
+        $respuesta1 = $cultivoModel->obtenerGeneros();
+        $respuesta2 = $cultivoModel->obtenerCultivos();
+        $lista['genero']=$respuesta1;
+        $lista['cultivo']=$respuesta2;
+        $this->view->show("cultivoView.php", $lista);
+    }
+    public function registrarGeneroCultivo() {
+        require 'model/CultivoModel.php';
 
+        $cultivoModel = new CultivoModel();
+
+        $respuesta = $cultivoModel->registrarGeneroCultivo($_POST['genero_id'],$_POST['cultivo_id']);
+
+        if ($respuesta) {
+
+            $lista['mensaje1'] = array("Se asignaron correctamente");
+        } else {
+
+            $lista['mensaje1'] = array("No se ha podido realizar la aignacion".$_POST['genero_id']);
+        }
+        $respuesta1 = $cultivoModel->obtenerGeneros();
+        $respuesta2 = $cultivoModel->obtenerCultivos();
+        $lista['genero']=$respuesta1;
+        $lista['cultivo']=$respuesta2;
         $this->view->show("cultivoView.php", $lista);
     }
 }
