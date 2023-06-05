@@ -82,9 +82,59 @@ class InsectosModel {
        return $resultado;
     }
 
+    public function listarGabetas($gabinete){
+        
+          
+        $consulta = $this->db->prepare("call sp_listar_gabetas(".$gabinete.")");
+
+        $consulta->execute();
+
+        $resultado = $consulta->fetchAll();
+
+        return $resultado;
+        
+    }
+    
+    public function listarCajas(){
+        
+        $consulta = $this->db->prepare("call sp_listar_cajas()");
+
+        $consulta->execute();
+
+        $resultado = $consulta->fetchAll();
+
+        return $resultado;
+        
+    }
+    
     public function listarAlmacenes(){
         
         $consulta = $this->db->prepare("call sp_listar_almacenes()");
+
+        $consulta->execute();
+
+        $resultado = $consulta->fetchAll();
+
+        return $resultado;
+        
+    }
+    
+    public function listarViales($caja){
+        
+           
+        $consulta = $this->db->prepare("call sp_listar_viales(".$caja.")");
+
+        $consulta->execute();
+
+        $resultado = $consulta->fetchAll();
+
+        return $resultado;
+        
+    }
+    
+    public function listarGabinetes(){
+        
+        $consulta = $this->db->prepare("call sp_listar_gabinetes()");
 
         $consulta->execute();
 
@@ -148,6 +198,16 @@ class InsectosModel {
         return $resultado;
     }
 
+    public function registrarAlmacen($almacen){
+        
+        $consulta = $this->db->prepare("call sp_registrar_almacen('" . $almacen . "')");
+
+        $resultado = $consulta->execute();
+
+        return $resultado;
+        
+    }
+    
     public function registrarFamilia($familia, $orden) {
 
         $consulta = $this->db->prepare("call sp_registrar_familia('" . $familia . "','" . $orden . "')");
