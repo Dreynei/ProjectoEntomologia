@@ -40,8 +40,10 @@
                                 <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoSubfamilia">Subfamilia</a></li>
                             </ul>
                         </div></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
+                    
                     <?php if ($_SESSION['tipo'] == 1) { ?>
+                        <li class="nav-item"><a class="nav-link text-light" href="?controlador=insectos&accion=mostrarRegistrarInsecto">Registrar insecto</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="?controlador=Cultivo&accion=mostrar">Registrar cultivo</a></li>
                         <li class="nav-item"><a class="nav-link text-light" href="?controlador=Usuario&accion=mostrarRegistrarUser">Registrar Usuario</a></li>
                     <?php } ?>  
                     <!--                        <li class="nav-item align-content-start"><a class="btn" id="carrito"></a></li>-->
