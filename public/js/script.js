@@ -297,6 +297,32 @@ function registrarCarrito(id_usuario,id_especimen){
     );
 }
 
+function accionAlmacen(almacen){
+    
+    //alert(almacen);
+    
+    if(almacen === "Gabinete"){
+        var etiquetaGabinete = document.getElementById('labelGabineteOC');
+        etiquetaGabinete.textContent = "Gabinete";
+        
+        var etiquetaGabeta = document.getElementById('labelGabetaOV');
+        etiquetaGabeta.textContent = "Gabeta";
+        
+        return;
+    }
+    
+    if(almacen.trim() === "Caja"){
+        var etiquetaCaja = document.getElementById('labelGabineteOC');
+        etiquetaCaja.textContent = "Caja";
+        
+        var etiquetaGabeta = document.getElementById('labelGabetaOV');
+        etiquetaGabeta.textContent = "Vial";
+          
+        return;
+    }
+    
+}
+
 function abrirModalOrden(){
     
     $('#modalOrden').modal('show');

@@ -253,6 +253,8 @@ class insectosController {
 
         $lista['lista'] = $insectosModel->obtenerOrdenes();
 
+        $lista['almacen'] = $insectosModel->listarAlmacenes();
+        
         $this->view->show("registrarinsectoView.php", $lista);
     }
 
