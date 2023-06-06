@@ -319,17 +319,6 @@ class InsectosModel {
         return $resultado;
     }
 
-//    public function registrarInsecto($idImagen, $idRecoleccion, $especie) {
-//
-//        $consulta = $this->db->prepare("CALL sp_registrar_insecto(:idImagen, :idRecoleccion, :especie)");
-//
-//        $consulta->bindParam(':idImagen', $idImagen);
-//        $consulta->bindParam(':idRecoleccion', $idRecoleccion);
-//        $consulta->bindParam(':especie', $especie);
-//        $resultado = $consulta->execute();
-//
-//        return $resultado;
-//    }
 
     public function buscarEspecieGenero($nombre) {
         $consulta = $this->db->prepare("call sp_buscar_especie_genero('" . $nombre . "')");

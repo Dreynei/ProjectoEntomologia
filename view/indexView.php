@@ -12,11 +12,6 @@ login de usuarios normales
 
     </head>
     
-    <?php
-  
-        //echo "<script>alert('" . $vars['lista'][0] . "');</script>";
-    
-    ?>
     
     <body class="text-center">
 

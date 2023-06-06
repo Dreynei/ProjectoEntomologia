@@ -31,15 +31,6 @@ class UsuarioModel {
     }
     
     public function autenticarUsuario($usuario, $contrasenna){
-        //solucion mas simple     
-//       $consulta = $this->db->prepare("call sp_autenticar_usuario('".$usuario."', '".$contrasenna."')");
-//        
-//       $consulta->execute();
-//       
-//       $resultado = $consulta->fetchColumn();
-//       
-//       return $resultado;
-       
         
        $consulta = $this->db->prepare("call sp_obtener_contrasenna_usuario('".$usuario."')");
         
