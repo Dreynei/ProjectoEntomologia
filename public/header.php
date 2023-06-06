@@ -23,22 +23,21 @@
     </head>
     <body>
         <p><?php $_SESSION['usuario']?></p>
-        <!--            <div class="container">-->
         <header class="bg-dark">
             <h1 class="text-light pt-3">Laboratorio entomología UCR</h1>
             <nav class="navbar navbar-expand-lg bg-dark">
-                <ul class="navbar-nav mr-auto col-10" >
+                <ul class="navbar-nav mr-auto col-8" >
                     <li class="nav-item"><a class="nav-link active text-light" href="?controlador=insectos&accion=mostrar">Inicio</a></li>
-                    <li><div class="dropdown bg-dark border-0">
-                            <a class="btn btn-secondary dropdown-toggle bg-dark border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item hover-dropdown"><div class="dropdown bg-dark border-0">
+                            <a class="nav-link text-light dropdown-toggle border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Busquedas generales
                             </a>
 
                             <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=mostrarBuscarOrden">Orden</a></li>
-                                <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoFamilia">Familia</a></li>
-                                <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoSubfamilia">Subfamilia</a></li>
-                                <li><a class="dropdown-item text-light" href="?controlador=Cultivo&accion=mostrarBuscarCultivo">Cultivo</a></li>
+                                <li><a class="dropdown-item text-light hover-dropdown" href="?controlador=insectos&accion=mostrarBuscarOrden">Orden</a></li>
+                                <li><a class="dropdown-item text-light hover-dropdown" href="?controlador=insectos&accion=buscarInsectoFamilia">Familia</a></li>
+                                <li><a class="dropdown-item text-light hover-dropdown" href="?controlador=insectos&accion=buscarInsectoSubfamilia">Subfamilia</a></li>
+                                <li><a class="dropdown-item text-light hover-dropdown" href="?controlador=Cultivo&accion=mostrarBuscarCultivo">Cultivo</a></li>
                             </ul>
                         </div></li>
                     
@@ -47,9 +46,8 @@
                         <li class="nav-item"><a class="nav-link text-light" href="?controlador=Cultivo&accion=mostrar">Registrar cultivo</a></li>
                         <li class="nav-item"><a class="nav-link text-light" href="?controlador=Usuario&accion=mostrarRegistrarUser">Registrar Usuario</a></li>
                     <?php } ?>  
-                    <!--                        <li class="nav-item align-content-start"><a class="btn" id="carrito"></a></li>-->
                 </ul>
-                <div class=" col-2 d-flex justify-content-end"><a class="nav-link" id="carrito" href="?controlador=carrito&accion=mostrar"></a><a class="nav-link ml-2" id="logout" href="?controlador=Usuario&accion=logout"></a></div>
+                <div class=" col-sm-4 d-flex justify-content-end"><a class="nav-link" id="carrito" href="?controlador=carrito&accion=mostrar"></a><a class="nav-link ml-2" id="logout" href="?controlador=Usuario&accion=logout"></a></div>
 
             </nav>
 

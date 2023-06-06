@@ -13,6 +13,8 @@
 class UsuarioController {
 
     public function __construct() {
+
+        session_start();
         $this->view = new View();
     }
 
@@ -45,7 +47,6 @@ class UsuarioController {
         if ($resultado) {
             echo "<script>console.log('Debug Objects:' );</script>";
             error_log("hola");
-            session_start();
             $lista = $usuarioModel->obtenerUserInfo($_POST['usuario']);
             foreach ($lista as $userInfo) {
                 $_SESSION['id'] = $userInfo[0];
@@ -53,9 +54,8 @@ class UsuarioController {
                 $_SESSION['tipo'] = $userInfo[2];
             }
 
-            $this->view->show("registrarusuarioView.php", null);
+            $this->view->show("buscarespecimenView.php", null);
         } else {
-            error_log("hola");
             $this->view->show("usuariologinView.php", null);
         }
     }

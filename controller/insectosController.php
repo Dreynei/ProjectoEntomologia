@@ -470,7 +470,6 @@ class insectosController {
         $insectosModel = new InsectosModel();
         $lista['lista'] = $insectosModel->buscarGeneroRelacion($_POST['id']);
         $message = $_POST['id'];
-        echo "<script>alert('$message');</script>";
         $this->view->show("buscarespecimenView.php", $lista); 
     }
 

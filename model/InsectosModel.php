@@ -130,29 +130,8 @@ class InsectosModel {
     
     
     public function mostrarImagen($especimen) {
-
-//        $idImagen = 1;
-//
-//        $consulta = $this->db->prepare("call sp_obtener_imagen(" . $idImagen . ")");
-//
-//        $consulta->execute();
-//
-//        // Obtiene los datos de la imagen de la consulta
-//        $row = $consulta->fetch(PDO::FETCH_ASSOC);
-//        $tipoArchivo = $row['tipo'];
-//        $contenidoArchivo = $row['contenido'];
-//
-//        // Establece los encabezados adecuados
-//        header("Content-Type: $tipoArchivo");
-//        header("Content-Length: " . strlen($contenidoArchivo));
-//
-//        // Muestra la imagen
-//        echo $contenidoArchivo;
-        
-       //$idImagen = 1;
         
        $consulta = $this->db->prepare("call sp_obtener_imagen('".$especimen."')");
-       //$consulta->bindParam(':idImagen', $idImagen);
        $consulta->execute();
         
        $resultado = $consulta->fetchAll();

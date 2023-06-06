@@ -35,7 +35,12 @@ div#contenedoRregistarAdmins{
     height: 60vh;
 }
 
-
+.hover-dropdown:hover{
+    background-color: #999999;
+}
+a:hover{
+    background-color: #999999;
+}
 
 footer{
     position: absolute;

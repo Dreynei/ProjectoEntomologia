@@ -22,15 +22,13 @@ include_once './public/header.php';
                         <p class="card-text">Clasificación:</p>
                         <p class="card-text">Orden: <?php echo $carrito[1];?> </p>
                         <p class="card-text">Familia: <?php echo $carrito[2];?> </p>
-                        <p class="card-text">Subfamilia: <?parrito[3];?> </p>
+                        <p class="card-text">Subfamilia: <?php echo $carrito[3];?> </p>
                         <p class="card-text">Genero: <?php echo $carrito[4];?> </p>
                         <p class="card-text">Especie: <?php echo $carrito[5];?> </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Ver especimen</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                             </div>
-                            <small class="text-body-secondary">9 mins</small>
                         </div>
                     </div>
                     <br>
