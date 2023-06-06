@@ -305,7 +305,6 @@ function registrarEspecie(especie, genero) {
 } // consultaAsincrona
 
 function registrarCarrito(id_usuario,id_especimen){
-    console.log(id_usuario+" "+id_especimen);
     
     
      var parametros = {
@@ -332,14 +331,29 @@ function registrarCarrito(id_usuario,id_especimen){
 
 function accionAlmacen(almacen){
     
+    
+    
     //alert(almacen);
     
     if(almacen === "Gabinete"){
+        //cuando se abra el modal
+        var tituloGabineteOC = document.getElementById('tituloGabineteOC');
+        tituloGabineteOC.textContent = "Registrar Gabinete";
+        
+        var tituloGavetaOV = document.getElementById('tituloGavetaOV');
+        tituloGavetaOV.textContent = "Registrar Gaveta";
+        
+        var esperaGabineteOC = document.getElementById('resultadoGabineteOC');
+        esperaGabineteOC.textContent = "Esperando Gabinete";
+        
+        var esperaGavetaOV = document.getElementById('resultadoGavetaOV');
+        esperaGavetaOV.textContent = "Esperando Gaveta";
+        
         var etiquetaGabinete = document.getElementById('labelGabineteOC');
         etiquetaGabinete.textContent = "Gabinete";
         
-        var etiquetaGabeta = document.getElementById('labelGabetaOV');
-        etiquetaGabeta.textContent = "Gabeta";
+        var etiquetaGabeta = document.getElementById('labelGavetaOV');
+        etiquetaGabeta.textContent = "Gaveta";
         
         /*
          * Traer todos los gabinetes
@@ -380,10 +394,23 @@ function accionAlmacen(almacen){
     }
     
     else if(almacen.trim() === "Caja"){
+        
+        var tituloGabineteOC = document.getElementById('tituloGabineteOC');
+        tituloGabineteOC.textContent = "Registrar Caja";
+        
+        var tituloGavetaOV = document.getElementById('tituloGavetaOV');
+        tituloGavetaOV.textContent = "Registrar Vial";
+        
+        var esperaGabineteOC = document.getElementById('resultadoGabineteOC');
+        esperaGabineteOC.textContent = "Esperando Caja";
+        
+        var esperaGavetaOV = document.getElementById('resultadoGavetaOV');
+        esperaGavetaOV.textContent = "Esperando Vial";
+        
         var etiquetaCaja = document.getElementById('labelGabineteOC');
         etiquetaCaja.textContent = "Caja";
         
-        var etiquetaVial = document.getElementById('labelGabetaOV');
+        var etiquetaVial = document.getElementById('labelGavetaOV');
         etiquetaVial.textContent = "Vial";
           
         $.ajax(
@@ -422,10 +449,25 @@ function accionAlmacen(almacen){
     }
     else{
         
-         var etiquetaGabineteOC = document.getElementById('labelGabineteOC');
+        var tituloGabineteOC = document.getElementById('tituloGabineteOC');
+        tituloGabineteOC.textContent = "INDEFINIDO";
+        
+        var tituloGavetaOV = document.getElementById('tituloGavetaOV');
+        tituloGavetaOV.textContent = "INDEFINIDO";
+        
+        var esperaGabineteOC = document.getElementById('resultadoGabineteOC');
+        esperaGabineteOC.textContent = "INDEFINIDO";
+        
+        var esperaGavetaOV = document.getElementById('resultadoGavetaOV');
+        esperaGavetaOV.textContent = "INDEFINIDO";
+        
+        $("#gavetaOVial").empty();
+        $("#gabineteOCaja").empty();
+        
+        var etiquetaGabineteOC = document.getElementById('labelGabineteOC');
         etiquetaGabineteOC.textContent = "INDEFINIDO";
         
-        var etiquetaGabetaOV = document.getElementById('labelGabetaOV');
+        var etiquetaGabetaOV = document.getElementById('labelGavetaOV');
         etiquetaGabetaOV.textContent = "INDEFINIDO";
         
     }
@@ -433,10 +475,7 @@ function accionAlmacen(almacen){
 }
 
 function listarGabetasOV(almacen, gabineteOC){
-    
-    alert("ALMACEN:"+almacen);
-    alert("GABINETEOC"+gabineteOC);
-    
+   
      var parametros = {
         "almacen": almacen,
         "gabineteOC": gabineteOC
@@ -454,7 +493,7 @@ function listarGabetasOV(almacen, gabineteOC){
                    //alert("Respuesta"+respuesta);
                    
                     var datos = JSON.parse(respuesta);
-                    $("#gabetaOVial").empty();
+                    $("#gavetaOVial").empty();
                     
                     if(almacen.trim() === "Gabinete"){
                     for (var i = 0; i < datos.length; i++) {
@@ -463,7 +502,7 @@ function listarGabetasOV(almacen, gabineteOC){
 
                             text: datos[i].id_gabeta
                         });
-                        $("#gabetaOVial").append(opcion);
+                        $("#gavetaOVial").append(opcion);
                     } // for
                 }
                 
@@ -475,13 +514,156 @@ function listarGabetasOV(almacen, gabineteOC){
 
                             text: datos[i].id_vial
                         });
-                        $("#gabetaOVial").append(opcion);
+                        $("#gavetaOVial").append(opcion);
                     } // for
                 }
                 
                 }
             }
     );
+    
+}
+
+function registrarGabineteOC(gabineteOC, almacen){
+    
+    if(almacen === "Gabinete"){
+        
+        var parametros = {
+        "idGabinete": gabineteOC
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=insectos&accion=registrarGabinete',
+                type: 'post',
+                beforeSend: function () {
+                    $("#resultadoGabineteOC").html("Procesando Gabinete");
+                },
+                success: function (respuesta) {
+                  
+                    if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var select = document.getElementById('gabineteOCaja');
+                        var option =  document.createElement('option');
+                        option.text = gabineteOC;
+                        
+                        select.appendChild(option);
+                    }
+                    
+                  
+                    $("#resultadoGabineteOC").html(respuesta);
+                   
+                }
+            }
+    );
+        
+    }
+    
+    if(almacen === "Caja"){
+        
+         var parametros = {
+        "idCaja": gabineteOC
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=insectos&accion=registrarCaja',
+                type: 'post',
+                beforeSend: function () {
+                    $("#resultadoGabineteOC").html("Procesando Caja");
+                },
+                success: function (respuesta) {
+                  
+                    if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var select = document.getElementById('gabineteOCaja');
+                        var option =  document.createElement('option');
+                        option.text = gabineteOC;
+                        
+                        select.appendChild(option);
+                    }
+                    
+                  
+                    $("#resultadoGabineteOC").html(respuesta);
+                   
+                }
+            }
+    );
+        
+    }
+    
+}
+
+function registrarGavetaOV(gabineteOC, gavetaOV, almacen){
+    
+    if(almacen === "Gabinete"){
+        
+        var parametros = {
+        "idGabinete": gabineteOC
+        ,"idGaveta": gavetaOV
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=insectos&accion=registrarGaveta',
+                type: 'post',
+                beforeSend: function () {
+                    $("#resultadoGavetaOV").html("Procesando Gaveta");
+                },
+                success: function (respuesta) {
+                  
+                    if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var select = document.getElementById('gavetaOVial');
+                        var option =  document.createElement('option');
+                        option.text = gavetaOV;
+                        
+                        select.appendChild(option);
+                    }
+                    
+                  
+                    $("#resultadoGavetaOV").html(respuesta);
+                   
+                }
+            }
+    );
+        
+    }
+    
+    if(almacen === "Caja"){
+        
+        var parametros = {
+        "idCaja": gabineteOC
+        ,"idVial": gavetaOV
+    };
+    $.ajax(
+            {
+                data: parametros,
+                url: '?controlador=insectos&accion=registrarVial',
+                type: 'post',
+                beforeSend: function () {
+                    $("#resultadoGavetaOV").html("Procesando Vial");
+                },
+                success: function (respuesta) {
+                  
+                    if(respuesta.trim() === "Registrado correctamente"){
+                     
+                        var select = document.getElementById('gavetaOVial');
+                        var option =  document.createElement('option');
+                        option.text = gavetaOV;
+                        
+                        select.appendChild(option);
+                    }
+                    
+                  
+                    $("#resultadoGavetaOV").html(respuesta);
+                   
+                }
+            }
+    );
+        
+    }
+    
     
 }
 
@@ -521,6 +703,18 @@ function abrirModalAlmacen(){
      
 }
 
+function abrirModalGabineteOC(){
+   
+      $('#modalGabineteOC').modal('show');
+     
+}
+
+function abrirModalGavetaOV(){
+    
+   $('#modalGavetaOV').modal('show');
+    
+}
+
 function cerrarModalOrden(){
     
     $('#modalOrden').modal('hide');
@@ -551,4 +745,14 @@ function cerrarModalAlmacen(){
     $('#modalAlmacen').modal('hide');
 }
 
+function cerrarModalGabineteOC(){
+    
+    $('#modalGabineteOC').modal('hide');
+    
+}
 
+function cerrarModalGavetaOV(){
+    
+    $('#modalGavetaOV').modal('hide');
+    
+}

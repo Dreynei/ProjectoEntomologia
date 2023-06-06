@@ -18,7 +18,6 @@ if (isset($vars['lista'])) {
                 <th>Subfamilias asociadas</th>
             </tr>
 
-
             <?php
             foreach ($vars['lista'] as $insecto) {
                 ?>
