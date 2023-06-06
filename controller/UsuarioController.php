@@ -45,8 +45,6 @@ class UsuarioController {
         );
 
         if ($resultado) {
-            echo "<script>console.log('Debug Objects:' );</script>";
-            error_log("hola");
             $lista = $usuarioModel->obtenerUserInfo($_POST['usuario']);
             foreach ($lista as $userInfo) {
                 $_SESSION['id'] = $userInfo[0];

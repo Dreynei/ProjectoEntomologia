@@ -16,11 +16,11 @@
                 <h1 class="m-3 h3 fw-normal">Autenticación administrador</h1>
 
                 <div class="m-3 form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Super administrador">
+                    <input name="usuario" type="text" class="form-control" id="floatingInput" placeholder="Super administrador">
                     <label for="floatingInput">Nombre de usuario</label>
                 </div>
                 <div class="m-3 form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="password">
+                    <input name="contrasenna" type="password" class="form-control" id="floatingPassword" placeholder="password">
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <button class="m-3 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
