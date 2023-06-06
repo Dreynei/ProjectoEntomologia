@@ -25,12 +25,25 @@ include_once './public/header.php';
                         <p class="card-text">Subfamilia: <?parrito[3];?> </p>
                         <p class="card-text">Genero: <?php echo $carrito[4];?> </p>
                         <p class="card-text">Especie: <?php echo $carrito[5];?> </p>
+                        <p class="card-text">Almacen: <?php echo $carrito[8]." ".$carrito[9];?> </p>
+                        <p class="card-text"><?php
+                            if($carrito[8] === "Gabinete"){
+                                
+                                echo "Gaveta ".$carrito[10];
+                                
+                            }
+                            if($carrito[8] === "Caja"){
+                                
+                                echo "Vial ".$carrito[10];
+                            }
+                            ?> 
+                        </p>
+                        
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Ver especimen</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                               
                             </div>
-                            <small class="text-body-secondary">9 mins</small>
+                           
                         </div>
                     </div>
                     <br>

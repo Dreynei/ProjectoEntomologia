@@ -288,7 +288,7 @@ class InsectosModel {
     
     public function registrarFamilia($familia, $orden) {
 
-        $consulta = $this->db->prepare("call sp_registrar_familia('" . $familia . "','" . $orden . "')");
+        $consulta = $this->db->prepare("call sp_registrar_familia('".$familia."','".$orden."')");
 
         $resultado = $consulta->execute();
 

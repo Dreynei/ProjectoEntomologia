@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/registrarinsectoView.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/public/js/script.js</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/insectosController.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/model/InsectosModel.php</file>
-=======
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/public/header.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/registrarinsectoView.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/view/carritoView.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/ProjectoEntomologia/controller/insectosController.php</file>
->>>>>>> 0c630de6296907e22e6a3cd336523f3faf4a4aa5
-        </group>
-    </open-files>
 </project-private>
