@@ -42,8 +42,16 @@ class CultivoModel {
     }
     public function registrarGeneroCultivo($id_genero,$id_cultivo) {
 
-        $consulta = $this->db->prepare("call sp_registrar_genero_cultivo(" . $id_genero . ",".$id_cultivo.")");
+        $consulta = $this->db->prepare("call sp_registrar_genero_cultivo('" . $id_genero . "','".$id_cultivo."')");
         $resultado = $consulta->execute();
         return $resultado;
     }
+    
+    public function buscarCultivo($nombre) {
+        $consulta = $this->db->prepare("call sp_buscar_cultivo('".$nombre."')");
+        $resultado = $consulta->execute();
+        $resultado = $consulta->fetchAll();
+        return $resultado;
+    }
+    
 }

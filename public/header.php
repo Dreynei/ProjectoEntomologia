@@ -38,6 +38,7 @@
                                 <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=mostrarBuscarOrden">Orden</a></li>
                                 <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoFamilia">Familia</a></li>
                                 <li><a class="dropdown-item text-light" href="?controlador=insectos&accion=buscarInsectoSubfamilia">Subfamilia</a></li>
+                                <li><a class="dropdown-item text-light" href="?controlador=Cultivo&accion=mostrarBuscarCultivo">Cultivo</a></li>
                             </ul>
                         </div></li>
                     

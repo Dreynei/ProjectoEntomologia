@@ -28,13 +28,13 @@ include_once './public/header.php';
                     echo "<div class='alert alert-dark text-center' role='alert' mt-2>" . $mensaje1 . "</div>";
                 }
                 ?>
-                <input name="id_genero" class="form-control mb-2" list="regeneroList" id="regenero" placeholder="Tipea para buscar genero..." required>
+                <input name="genero_id" class="form-control mb-2" list="regeneroList" id="regenero" placeholder="Tipea para buscar genero..." required>
                 <datalist id="regeneroList">
                     <?php
                     foreach ($vars['genero'] as $genero) {
                         ?>
 
-                    <option ><input type="hidden" name="genero_id" id="genero_id" value="<?php echo $genero[0]; ?>"><?php echo $genero[1]; ?></option>
+                    <option ><?php echo $genero[1]; ?></option>
 
 
                         <?php
@@ -42,13 +42,13 @@ include_once './public/header.php';
                     ?> 
                 </datalist>
 
-                <input name="id_cultivo" class="form-control mb-2" list="reOrdenList" id="reOrden" placeholder="Tipea para buscar orden..." required>
+                <input name="cultivo_id" class="form-control mb-2" list="reOrdenList" id="reOrden" placeholder="Tipea para buscar orden..." required>
                 <datalist id="reOrdenList">
                     <?php
                     foreach ($vars['cultivo'] as $cultivo) {
                         ?>
 
-                        <option "><input type="hidden" name="cultivo_id" id="cultivo_id" value="<?php echo $genero[0]; ?>"><?php echo $cultivo[1]; ?></option>
+                        <option ><?php echo $cultivo[1]; ?></option>
 
 
                         <?php
