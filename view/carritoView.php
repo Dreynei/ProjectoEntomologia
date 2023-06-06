@@ -45,7 +45,8 @@ include_once './public/header.php';
             </div>
 
 
-        <?php }
+        <?php
+        }
     }
     ?>
 </div>

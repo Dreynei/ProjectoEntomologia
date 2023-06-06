@@ -317,12 +317,8 @@ function registrarCarrito(id_usuario,id_especimen){
                 url: '?controlador=carrito&accion=registrarInsectoCarrito',
                 type: 'post',
                 beforeSend: function () {
-                    //$("#resultadoEspecie").html("Procesando Especie");
                 },
                 success: function (respuesta) {
-                   
-                   alert(respuesta);
-                    //$("#resultadoEspecie").html(respuesta);
                    
                 }
             }
@@ -331,9 +327,7 @@ function registrarCarrito(id_usuario,id_especimen){
 
 function accionAlmacen(almacen){
     
-    
-    
-    //alert(almacen);
+   
     
     if(almacen === "Gabinete"){
         //cuando se abra el modal
