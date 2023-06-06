@@ -53,35 +53,31 @@ class insectosController {
         require 'model/InsectosModel.php';
 
         $insectosModel = new InsectosModel();
-
-        if(!isset($_POST['gabineteOCaja']) || !isset($_POST['gabetaOVial'])){
+        
+        $respuesta = false;
+        
+        //en caso que sea otro metodo de almacen como una bolsa
+        if(!isset($_POST['gabineteOCaja']) && !isset($_POST['gavetaOVial'])){
             
-             $respuesta = $insectosModel->registrarInsectoGabeta($_FILES['imagen']['name'],
+             $respuesta = $insectosModel->registrarInsecto($_FILES['imagen']['name'],
                 $_FILES['imagen']['type'], $_FILES['imagen']['size'],
                 $_FILES['imagen']['tmp_name'], $_POST['recolector'],
                 $_POST['pais'], $_POST['provincia'], $_POST['canton'],
                 $_POST['distrito'], $_POST['fecha'], $_POST['especie'], 
                 $_POST['almacen'], 0, 0);
             
-        }else{
+        }
+        // en caso que sea gabinete o caja y gaveta o vial
+        else if(isset( $_POST['gabineteOCaja']) && isset($_POST['gavetaOVial'])){
         
-        $respuesta = $insectosModel->registrarInsectoGabeta($_FILES['imagen']['name'],
+        $respuesta = $insectosModel->registrarInsecto($_FILES['imagen']['name'],
                 $_FILES['imagen']['type'], $_FILES['imagen']['size'],
                 $_FILES['imagen']['tmp_name'], $_POST['recolector'],
                 $_POST['pais'], $_POST['provincia'], $_POST['canton'],
                 $_POST['distrito'], $_POST['fecha'], $_POST['especie'], 
-                $_POST['almacen'],  $_POST['gabineteOCaja'], $_POST['gabetaOVial']);
+                $_POST['almacen'],  $_POST['gabineteOCaja'], $_POST['gavetaOVial']);
         }
-//        $idImagen = $insectosModel->registrarImagen($_FILES['imagen']['name'],
-//                $_FILES['imagen']['type'], $_FILES['imagen']['size'],
-//                $_FILES['imagen']['tmp_name']);
-//
-//        $idRecoleccion = $insectosModel->registrarRecoleccion($_POST['recolector'],
-//                $_POST['pais'], $_POST['provincia'], $_POST['canton'],
-//                $_POST['distrito'], $_POST['fecha']);
-//
-//        $respuesta = $insectosModel->registrarInsecto($idImagen, $idRecoleccion, $_POST['especie']);
-
+        
         if ($respuesta) {
 
             $lista['mensaje'] = array("Insecto registrado correctamente");
@@ -97,6 +93,86 @@ class insectosController {
         $this->view->show("registrarinsectoView.php", $lista);
     }
 
+    public function registrarGabinete(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $respuesta = $insectosModel->registrarGabinete($_POST['idGabinete']);
+
+        if ($respuesta) {
+
+            $mensaje = "Registrado correctamente";
+        } else {
+
+            $mensaje = "No se ha podido registrar";
+        }
+
+        echo $mensaje;
+        
+    }
+    
+    public function registrarCaja(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $respuesta = $insectosModel->registrarCaja($_POST['idCaja']);
+
+        if ($respuesta) {
+
+            $mensaje = "Registrado correctamente";
+        } else {
+
+            $mensaje = "No se ha podido registrar";
+        }
+
+        echo $mensaje;
+        
+    }
+    
+    public function registrarGaveta(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $respuesta = $insectosModel->registrarGaveta($_POST['idGabinete'], $_POST['idGaveta']);
+
+        if ($respuesta) {
+
+            $mensaje = "Registrado correctamente";
+        } else {
+
+            $mensaje = "No se ha podido registrar";
+        }
+
+        echo $mensaje;
+        
+    }
+    
+    public function registrarVial(){
+        
+        require 'model/InsectosModel.php';
+
+        $insectosModel = new InsectosModel();
+
+        $respuesta = $insectosModel->registrarVial($_POST['idCaja'], $_POST['idVial']);
+
+        if ($respuesta) {
+
+            $mensaje = "Registrado correctamente";
+        } else {
+
+            $mensaje = "No se ha podido registrar";
+        }
+
+        echo $mensaje;
+        
+    }
+    
     public function listarGabinetes(){
         
         require 'model/InsectosModel.php';

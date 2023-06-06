@@ -51,9 +51,49 @@ class InsectosModel {
         return $resultado;
     }
 
-    public function registrarInsectoGabeta($nombreImagen, $tipoImagen, $tamannoImagen, $rutaTemporal,
+    public function registrarGabinete($idGabinete){
+        
+        $consulta = $this->db->prepare("call sp_registrar_gabinete(".$idGabinete.")");
+
+        $resultado = $consulta->execute();
+
+        return $resultado;
+        
+    }
+    
+    public function registrarCaja($idCaja){
+        
+        $consulta = $this->db->prepare("call sp_registrar_caja(".$idCaja.")");
+
+        $resultado = $consulta->execute();
+
+        return $resultado;
+        
+    }
+    
+    public function registrarGaveta($idGabinete, $idGaveta){
+        
+        $consulta = $this->db->prepare("call sp_registrar_gabeta(".$idGabinete.",".$idGaveta.")");
+
+        $resultado = $consulta->execute();
+
+        return $resultado;
+        
+    }
+    
+    public function registrarVial($idCaja, $idVial){
+        
+        $consulta = $this->db->prepare("call sp_registrar_vial(".$idCaja.",".$idVial.")");
+
+        $resultado = $consulta->execute();
+
+        return $resultado;
+        
+    }
+    
+    public function registrarInsecto($nombreImagen, $tipoImagen, $tamannoImagen, $rutaTemporal,
             $recolector, $pais, $provincia, $canton, $distrito, $fecha, $especie, $almacen, $gabineteOC,
-            $gabetaOV){
+            $gavetaOV){
         //normalizar la fecha
         $fecha_filtro1 = str_replace('/', '-', $fecha);
         $fecha_filtro2 = str_replace('.', '-', $fecha_filtro1);
@@ -61,7 +101,7 @@ class InsectosModel {
         $contenidoArchivo = file_get_contents($rutaTemporal);
         //imagen
         
-        $consulta = $this->db->prepare("CALL sp_registrar_insecto_gabeta(:nombre_imagen, :tipo_imagen, :tamanno_imagen, :contenido_imagen, :recolector, :pais, :provincia, :canton, :distrito, :fecha, :especie, :almacen, :gabineteOC, :gabetaOV)");
+        $consulta = $this->db->prepare("CALL sp_registrar_insecto(:nombre_imagen, :tipo_imagen, :tamanno_imagen, :contenido_imagen, :recolector, :pais, :provincia, :canton, :distrito, :fecha, :especie, :almacen, :gabineteOC, :gabetaOV)");
                 
         $consulta->bindParam(':nombre_imagen', $nombreImagen);
         $consulta->bindParam(':tipo_imagen', $tipoImagen);
@@ -81,7 +121,7 @@ class InsectosModel {
        
         $consulta->bindParam(':gabineteOC', $gabineteOC);
             
-        $consulta->bindParam(':gabetaOV', $gabetaOV);
+        $consulta->bindParam(':gabetaOV', $gavetaOV);
         
         //especimen
         $resultado = $consulta->execute();
@@ -300,17 +340,17 @@ class InsectosModel {
         return $resultado;
     }
 
-    public function registrarInsecto($idImagen, $idRecoleccion, $especie) {
-
-        $consulta = $this->db->prepare("CALL sp_registrar_insecto(:idImagen, :idRecoleccion, :especie)");
-
-        $consulta->bindParam(':idImagen', $idImagen);
-        $consulta->bindParam(':idRecoleccion', $idRecoleccion);
-        $consulta->bindParam(':especie', $especie);
-        $resultado = $consulta->execute();
-
-        return $resultado;
-    }
+//    public function registrarInsecto($idImagen, $idRecoleccion, $especie) {
+//
+//        $consulta = $this->db->prepare("CALL sp_registrar_insecto(:idImagen, :idRecoleccion, :especie)");
+//
+//        $consulta->bindParam(':idImagen', $idImagen);
+//        $consulta->bindParam(':idRecoleccion', $idRecoleccion);
+//        $consulta->bindParam(':especie', $especie);
+//        $resultado = $consulta->execute();
+//
+//        return $resultado;
+//    }
 
     public function buscarEspecieGenero($nombre) {
         $consulta = $this->db->prepare("call sp_buscar_especie_genero('" . $nombre . "')");

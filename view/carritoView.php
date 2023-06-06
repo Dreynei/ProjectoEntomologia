@@ -2,15 +2,22 @@
 include_once './public/header.php';
 ?>
 
-<div class=" mt-3 d-flex align-items-center justify-content-center">
+<div class="container col-8 align-items-center">
 
+    <div class="row row-cols-10">
     <?php if (isset($vars['lista'])) {
 
         foreach ($vars['lista'] as $carrito) {
+            
+            $imageDataEncoded = base64_encode($carrito[6]);
+            $imageSrc = 'data:'.$carrito[7].';base64,' . $imageDataEncoded;
             ?>
-            <div class="col-3 m-1">
-                <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm col col-12 align-items-center">
+
+                    <img src="<?php echo $imageSrc;?>" class="card-img-top" alt="Imagen de la carta">
+                    
                     <div class="card-body">
                         <p class="card-text">Clasificación:</p>
                         <p class="card-text">Orden: <?php echo $carrito[1];?> </p>
@@ -26,10 +33,14 @@ include_once './public/header.php';
                             <small class="text-body-secondary">9 mins</small>
                         </div>
                     </div>
+                    <br>
                 </div>
             </div>
+            
+        
     <?php }
 } ?>
+        </div>
 </div>
 
 
